@@ -1,0 +1,124 @@
+﻿@*@model FoodOrder.Models.Customer*@
+
+@{
+    ViewBag.Title = "Sign up";
+    Layout = "~/Views/Shared/_mycustomlayout.cshtml";
+}
+@*<link href="~/Content/css_22_log_in.min.css" rel="stylesheet">*@
+<main class="">
+    <div class="container">
+        <div class="sign-form">
+            <div class="header">
+                <h1 class="title">Sign Up</h1>
+            </div>
+            <form id="frmSignUp" method="" action="#" class="job-sign-from">
+                <div class="form-group"><input id="FullName" name="FullName" type="text" placeholder="Full Name" class="form-control" required /></div>
+                <div class="form-group"><input id="Username" name="Username" type="text" placeholder="Username" class="form-control" required /></div>
+                <div class="form-group"><input id="Email" name="Email" type="email" placeholder="Email" class="form-control" required /></div>
+                <div class="form-group"><input id="Password" name="Password" type="password" placeholder="Password" class="form-control" required /></div>
+                <div class="form-group"><input id="ConfirmPassword" type="password" placeholder="Confirm Password" class="form-control" required /></div>
+                <input type="submit" style="display:none" />
+                <div class="form-group"><input type="button" value="Sign Up" class="btn btn-custom btn-custom-secondary" onclick="SignUp();"></div>
+            </form>
+                 <div class="form-group"><input type="button" value="have account" class="btn btn--secondary btn--rounded inline" onclick="location.href='@Url.Action("Login","Home")'"></div>
+        </div>
+    </div>
+</main>
+
+
+@section scripts{
+
+        <script type="text/javascript">
+
+        var password = document.getElementById("Password"), confirm_password = document.getElementById("ConfirmPassword");
+        var enableEnter = true;
+        function validatePassword() {
+            if (password.value != confirm_password.value) {
+                confirm_password.setCustomValidity("Passwords Don't Match");
+            } else {
+                confirm_password.setCustomValidity('');
+            }
+        }
+
+
+        password.onchange = validatePassword;
+        confirm_password.onkeyup = validatePassword;
+
+
+        $(document).keypress(function (e) {
+
+            if (e.which == 13) {
+                if (!swal.isVisible()) {
+                    e.preventDefault();
+                    if ($("#FullName").val()) {
+                        if ($("#Username").val()) {
+                            if ($("#Email").val()) {
+                                if ($("#Password").val()) {
+                                    if ($("#ConfirmPassword").val()) {
+                                        enableEnter = false;
+                                        SignUp();
+
+
+                                    }
+                                    else {
+                                        $("#ConfirmPassword").focus();
+                                    }
+
+                                }
+                                else {
+                                    $("#Password").focus();
+                                }
+                            }
+                            else {
+                                $("#Email").focus();
+                            }
+                        }
+                        else {
+                            $("#Username").focus();
+                        }
+                    }
+                    else {
+                        $("#FullName").focus();
+                    }
+                }
+            }
+        });
+
+        $("input").keypress(function (e) {
+            $("#ErrMsg").text('');
+            $("#ErrMsgDiv").hide();
+        })
+        function SignUp() {
+            if ($('#frmSignUp')[0].checkValidity()) {
+                swal('Please wait');
+                swal.showLoading();
+                var frmSerialize = $("#frmSignUp").serialize();
+                $.post("/Home/Signup", frmSerialize, function (data) {
+                    if (data == "@(FoodOrder.Shared.Constants.MSG_SUCCESS.Text)") {
+                        //swal.close();
+                        //location.href = "/Home/Index";
+                        swal('SignUp successful').then((result) => {
+                            if (result.value) {
+                                //swal("Verify your account");
+                                //swal.showLoading();
+                                location.href = "/Home/Login";
+                            }
+                        })
+                    }
+                    else {
+                        swal(data);
+                    }
+                })
+            }
+            else {
+                $('#frmSignUp').find(':submit').click();
+            }
+        }
+
+        </script>
+    
+
+    <script src="~/Content/Template/assets/js/jquery-2.2.4.min.js"></script>
+    <script src="~/Content/Template/assets/js/plugins.js"></script>
+    <script src="~/Content/Template/assets/js/functions.js"></script>
+}

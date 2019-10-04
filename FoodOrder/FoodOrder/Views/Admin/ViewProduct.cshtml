@@ -1,0 +1,103 @@
+﻿@model IEnumerable<FoodOrder.Models.fooditem>
+
+@{
+    ViewBag.Title = "ViewProduct";
+    Layout = "~/Views/Shared/DashboardLayout.cshtml";
+}
+
+<h2>ViewProduct</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ITEMID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ITEMNAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PRICE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ITEMDESCRIPTION)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ITEMCATEGORY)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ITEMSTATUS)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+
+
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ITEMID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ITEMNAME)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PRICE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ITEMDESCRIPTION)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ITEMCATEGORY)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ITEMSTATUS)
+            </td>
+            <td>
+                <button class="btn btn-sm btn-warning" style="color:white; margin: 3px; width:100%;" onclick="LoadMenuContent('/Admin/AddProduct/@(item.ITEMID)');">
+                    <span>Edit&nbsp;&nbsp;</span>
+                    @*<i id="@loaderEdId" class="loaderEd fa fa-spinner fa-spin"></i>*@
+                </button>
+
+                @*<button class="btn btn-sm btn-warning" style="color:white; margin: 3px; width:100%;" onclick= "deleteitem('@item.ITEMID')">
+                    <span>Edit&nbsp;&nbsp;</span>
+                    @*<i id="@loaderEdId" class="loaderEd fa fa-spinner fa-spin"></i>*@
+                
+            </td>
+        </tr>
+    }
+
+</table>
+
+@section scripts{
+    <script type="text/javascript">
+
+        //function deleteitem(id) {
+
+
+        //    swal('Please wait');
+        //    swal.showLoading();
+
+        //    $.get("/Admin/_RemoveProduct?id=" + encodeURI(id), function (data) {
+        //        swal.close();
+        //        if (data == "OK") {
+        //            location.href = "/Admin/ViewProduct";
+        //        }
+        //        else {
+        //            //var msg = "Incorrect Username or Password!"
+        //            var msg = data;
+
+        //            $("#ErrMsg").text(msg);
+        //            $("#ErrMsgDiv").show();
+
+        //        }
+
+        //    })
+        //}
+       
+
+        </script>
+
+
+}

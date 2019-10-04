@@ -1,0 +1,105 @@
+﻿@model FoodOrder.Models.Customer
+@{
+    ViewBag.Title = "MyProfile";
+    Layout = "~/Views/Shared/_mycustomlayout.cshtml";
+}
+<!-- Contact #1
+============================================= -->
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+       
+     
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+       color: black
+    }
+
+    tr:nth-child(even) {
+      
+        background-color: #f1f1c1;
+        /*background-color: #dddddd;*/
+    }
+</style>
+<section class="bg-white">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-8 col-md-8">
+                <div class="container-fluid">
+                    <table>
+                        <tr>
+                            <th>
+                                Customer ID:
+                            </th>
+                            <td> @Model.CUSTID</td>
+
+                        </tr>
+                    
+                        <tr>
+                            <th>
+                                Customer Name:
+                            </th>
+                            <td> @Model.CUSTNAME</td>
+
+                        </tr>
+                        <tr>
+                            <th>
+                                User Name:
+                            </th>
+                            <td> @Model.CUSTUSERNAME</td>
+
+                        </tr>
+                        <tr>
+                            <th>
+                                Email address:
+                            </th>
+                            <td> @Model.EMAIL</td>
+
+                        </tr>
+                        <tr>
+                            <th>
+                                Wallet No:
+                            </th>
+                            <td> @Model.walletid</td>
+
+                        </tr>
+                        <tr>
+                            <th>
+                               Balance:
+                            </th>
+                            <td> @Model.balance</td>
+
+                        </tr>
+
+
+                    </table>
+                   
+                </div>
+            </div>
+
+
+            <div class="col-xs-12 col-sm-4 col-md-4">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-8">
+                            <img src="~/Content/Template/profilepic.png" width="100%" height="100%">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+<!-- #contact1 end -->
+<div class="clearfix pt-150"></div>

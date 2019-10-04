@@ -1,0 +1,23 @@
+﻿@model FoodOrder.Models.testmodel
+
+@{
+    ViewBag.Title = "CHeckView";
+    //Layout = "~/Views/Shared/.cshtml";
+    bool rec=true;
+    if (Model.paymentmethod == null)
+    {
+        rec = false;
+    }
+
+}
+
+
+<h2>CHeckView</h2>
+@if(rec){
+Html.Display(Model.paymentmethod);
+}
+else
+{
+    Html.Display("NO RECORD");
+}
+

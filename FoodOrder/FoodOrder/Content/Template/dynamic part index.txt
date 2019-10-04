@@ -1,0 +1,374 @@
+  <section id="slider" class="slider slide-overlay-dark">
+            <!-- START REVOLUTION SLIDER 5.0 -->
+            <div class="rev_slider_wrapper">
+                <div id="slider1" class="rev_slider" data-version="5.0">
+                    <ul>
+                        <!-- slide 1 -->
+                        <li data-transition="turnoff-vertical"
+                            data-slotamount="default"
+                            data-easein="Power4.easeInOut"
+                            data-easeout="Power4.easeInOut"
+                            data-masterspeed="2000">
+                            <!-- MAIN IMAGE -->
+                            <img src="assets/images/sliders/slide-bg/8.jpg" alt="Slide Background Image" width="1920" height="1280">
+                            <!-- LAYER NR. 1 -->
+                            <div class="tp-caption"
+                                 data-x="center" data-hoffset="0"
+                                 data-y="center" data-voffset="-130"
+                                 data-whitespace="nowrap"
+                                 data-width="none"
+                                 data-height="none"
+                                 data-frames='[{"delay":1500,"speed":1000,"frame":"0","from":"x:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"x:50px;opacity:0;","ease":"Power3.easeInOut"}]'
+                                 data-splitin="none"
+                                 data-splitout="none"
+                                 data-responsive_offset="on">
+                                <div class="slide--subheadline">Deals</div>
+                            </div>
+
+                            <!-- LAYER NR. 2 -->
+                            <div class="tp-caption"
+                                 data-x="center" data-hoffset="0"
+                                 data-y="center" data-voffset="-65"
+                                 data-whitespace="nowrap"
+                                 data-width="none"
+                                 data-height="none"
+                                 data-frames='[{"delay":1750,"speed":1000,"frame":"0","from":"x:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                                 data-splitin="none"
+                                 data-splitout="none"
+                                 data-responsive_offset="on">
+                                <div class="slide--headline">Deal 1<span style="color: orange"> (In 75/-)</span></div>
+                            </div>
+
+                            <!-- LAYER NR. 3 -->
+                            <div class="tp-caption"
+                                 data-x="center" data-hoffset="0"
+                                 data-y="center" data-voffset="20"
+                                 data-width="none"
+                                 data-height="none"
+                                 data-frames='[{"delay":2000,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                                 data-splitin="none"
+                                 data-splitout="none"
+                                 data-responsive_offset="on">
+                                <div class="slide--bio text--center" style="width: 100%">
+                                    Egg + Paratha + Colslaw OR Potato Paratha + Raita OR<br>2x Pori + Curry + Pikle OR Chicken Sandwitch + Colslaw
+                                </div>
+                            </div>
+
+                            <!-- LAYER NR. 4 -->
+                            <div class="tp-caption"
+                                 data-x="center" data-hoffset="0"
+                                 data-y="center" data-voffset="100"
+                                 data-width="none"
+                                 data-height="none"
+                                 data-whitespace="nowrap"
+                                 data-frames='[{"delay":2250,"speed":1500,"frame":"0","from":"x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                                 data-splitin="none"
+                                 data-splitout="none"
+                                 data-actions='[{"event":"click","action":"jumptoslide","slide":"rs-164","delay":""}]'
+                                 data-basealign="slide"
+                                 data-responsive_offset="on"
+                                 data-responsive="off">
+                                <div class="slide-action">
+                                    <a class="btn btn--white btn--bordered btn--rounded" href="#">Add To Cart</a>
+                                </div>
+                            </div>
+
+                        </li>
+
+                        <!-- slide 1 -->
+                        <li data-transition="turnoff-vertical"
+                            data-slotamount="default"
+                            data-easein="Power4.easeInOut"
+                            data-easeout="Power4.easeInOut"
+                            data-masterspeed="2000">
+                            <!-- MAIN IMAGE -->
+                            <img src="assets/images/sliders/slide-bg/8.jpg" alt="Slide Background Image" width="1920" height="1280">
+                            <!-- LAYER NR. 1 -->
+                            <div class="tp-caption"
+                                 data-x="center" data-hoffset="0"
+                                 data-y="center" data-voffset="-130"
+                                 data-whitespace="nowrap"
+                                 data-width="none"
+                                 data-height="none"
+                                 data-frames='[{"delay":1500,"speed":1000,"frame":"0","from":"x:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"x:50px;opacity:0;","ease":"Power3.easeInOut"}]'
+                                 data-splitin="none"
+                                 data-splitout="none"
+                                 data-responsive_offset="on">
+                                <div class="slide--subheadline">Deals</div>
+                            </div>
+
+                            <!-- LAYER NR. 2 -->
+                            <div class="tp-caption"
+                                 data-x="center" data-hoffset="0"
+                                 data-y="center" data-voffset="-65"
+                                 data-whitespace="nowrap"
+                                 data-width="none"
+                                 data-height="none"
+                                 data-frames='[{"delay":1750,"speed":1000,"frame":"0","from":"x:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                                 data-splitin="none"
+                                 data-splitout="none"
+                                 data-responsive_offset="on">
+                                <div class="slide--headline">Deal 2<span style="color: orange"> (In 75/-)</span></div>
+                            </div>
+
+                            <!-- LAYER NR. 3 -->
+                            <div class="tp-caption"
+                                 data-x="center" data-hoffset="0"
+                                 data-y="center" data-voffset="20"
+                                 data-width="none"
+                                 data-height="none"
+                                 data-frames='[{"delay":2000,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                                 data-splitin="none"
+                                 data-splitout="none"
+                                 data-responsive_offset="on">
+                                <div class="slide--bio text--center" style="width: 100%">
+                                    Egg + Paratha + Colslaw OR Potato Paratha + Raita OR<br>2x Pori + Curry + Pikle OR Chicken Sandwitch + Colslaw
+                                </div>
+                            </div>
+
+                            <!-- LAYER NR. 4 -->
+                            <div class="tp-caption"
+                                 data-x="center" data-hoffset="0"
+                                 data-y="center" data-voffset="100"
+                                 data-width="none"
+                                 data-height="none"
+                                 data-whitespace="nowrap"
+                                 data-frames='[{"delay":2250,"speed":1500,"frame":"0","from":"x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                                 data-splitin="none"
+                                 data-splitout="none"
+                                 data-actions='[{"event":"click","action":"jumptoslide","slide":"rs-164","delay":""}]'
+                                 data-basealign="slide"
+                                 data-responsive_offset="on"
+                                 data-responsive="off">
+                                <div class="slide-action">
+                                    <a class="btn btn--white btn--bordered btn--rounded" href="#">Add To Cart</a>
+                                </div>
+                            </div>
+
+                        </li>
+
+                        <!-- slide 1 -->
+                        <li data-transition="turnoff-vertical"
+                            data-slotamount="default"
+                            data-easein="Power4.easeInOut"
+                            data-easeout="Power4.easeInOut"
+                            data-masterspeed="2000">
+                            <!-- MAIN IMAGE -->
+                            <img src="assets/images/sliders/slide-bg/8.jpg" alt="Slide Background Image" width="1920" height="1280">
+                            <!-- LAYER NR. 1 -->
+                            <div class="tp-caption"
+                                 data-x="center" data-hoffset="0"
+                                 data-y="center" data-voffset="-130"
+                                 data-whitespace="nowrap"
+                                 data-width="none"
+                                 data-height="none"
+                                 data-frames='[{"delay":1500,"speed":1000,"frame":"0","from":"x:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"x:50px;opacity:0;","ease":"Power3.easeInOut"}]'
+                                 data-splitin="none"
+                                 data-splitout="none"
+                                 data-responsive_offset="on">
+                                <div class="slide--subheadline">Deals</div>
+                            </div>
+
+                            <!-- LAYER NR. 2 -->
+                            <div class="tp-caption"
+                                 data-x="center" data-hoffset="0"
+                                 data-y="center" data-voffset="-65"
+                                 data-whitespace="nowrap"
+                                 data-width="none"
+                                 data-height="none"
+                                 data-frames='[{"delay":1750,"speed":1000,"frame":"0","from":"x:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                                 data-splitin="none"
+                                 data-splitout="none"
+                                 data-responsive_offset="on">
+                                <div class="slide--headline">Deal 3<span style="color: orange"> (In 75/-)</span></div>
+                            </div>
+
+                            <!-- LAYER NR. 3 -->
+                            <div class="tp-caption"
+                                 data-x="center" data-hoffset="0"
+                                 data-y="center" data-voffset="20"
+                                 data-width="none"
+                                 data-height="none"
+                                 data-frames='[{"delay":2000,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                                 data-splitin="none"
+                                 data-splitout="none"
+                                 data-responsive_offset="on">
+                                <div class="slide--bio text--center" style="width: 100%">
+                                    Egg + Paratha + Colslaw OR Potato Paratha + Raita OR<br>2x Pori + Curry + Pikle OR Chicken Sandwitch + Colslaw
+                                </div>
+                            </div>
+
+                            <!-- LAYER NR. 4 -->
+                            <div class="tp-caption"
+                                 data-x="center" data-hoffset="0"
+                                 data-y="center" data-voffset="100"
+                                 data-width="none"
+                                 data-height="none"
+                                 data-whitespace="nowrap"
+                                 data-frames='[{"delay":2250,"speed":1500,"frame":"0","from":"x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                                 data-splitin="none"
+                                 data-splitout="none"
+                                 data-actions='[{"event":"click","action":"jumptoslide","slide":"rs-164","delay":""}]'
+                                 data-basealign="slide"
+                                 data-responsive_offset="on"
+                                 data-responsive="off">
+                                <div class="slide-action">
+                                    <a class="btn btn--white btn--bordered btn--rounded" href="#">Add To Cart</a>
+                                </div>
+                            </div>
+
+                        </li>
+
+                        <!-- slide 1 -->
+                        <li data-transition="turnoff-vertical"
+                            data-slotamount="default"
+                            data-easein="Power4.easeInOut"
+                            data-easeout="Power4.easeInOut"
+                            data-masterspeed="2000">
+                            <!-- MAIN IMAGE -->
+                            <img src="assets/images/sliders/slide-bg/8.jpg" alt="Slide Background Image" width="1920" height="1280">
+                            <!-- LAYER NR. 1 -->
+                            <div class="tp-caption"
+                                 data-x="center" data-hoffset="0"
+                                 data-y="center" data-voffset="-130"
+                                 data-whitespace="nowrap"
+                                 data-width="none"
+                                 data-height="none"
+                                 data-frames='[{"delay":1500,"speed":1000,"frame":"0","from":"x:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"x:50px;opacity:0;","ease":"Power3.easeInOut"}]'
+                                 data-splitin="none"
+                                 data-splitout="none"
+                                 data-responsive_offset="on">
+                                <div class="slide--subheadline">Deals</div>
+                            </div>
+
+                            <!-- LAYER NR. 2 -->
+                            <div class="tp-caption"
+                                 data-x="center" data-hoffset="0"
+                                 data-y="center" data-voffset="-65"
+                                 data-whitespace="nowrap"
+                                 data-width="none"
+                                 data-height="none"
+                                 data-frames='[{"delay":1750,"speed":1000,"frame":"0","from":"x:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                                 data-splitin="none"
+                                 data-splitout="none"
+                                 data-responsive_offset="on">
+                                <div class="slide--headline">Deal 4<span style="color: orange"> (In 75/-)</span></div>
+                            </div>
+
+                            <!-- LAYER NR. 3 -->
+                            <div class="tp-caption"
+                                 data-x="center" data-hoffset="0"
+                                 data-y="center" data-voffset="20"
+                                 data-width="none"
+                                 data-height="none"
+                                 data-frames='[{"delay":2000,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                                 data-splitin="none"
+                                 data-splitout="none"
+                                 data-responsive_offset="on">
+                                <div class="slide--bio text--center" style="width: 100%">
+                                    Egg + Paratha + Colslaw OR Potato Paratha + Raita OR<br>2x Pori + Curry + Pikle OR Chicken Sandwitch + Colslaw
+                                </div>
+                            </div>
+
+                            <!-- LAYER NR. 4 -->
+                            <div class="tp-caption"
+                                 data-x="center" data-hoffset="0"
+                                 data-y="center" data-voffset="100"
+                                 data-width="none"
+                                 data-height="none"
+                                 data-whitespace="nowrap"
+                                 data-frames='[{"delay":2250,"speed":1500,"frame":"0","from":"x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                                 data-splitin="none"
+                                 data-splitout="none"
+                                 data-actions='[{"event":"click","action":"jumptoslide","slide":"rs-164","delay":""}]'
+                                 data-basealign="slide"
+                                 data-responsive_offset="on"
+                                 data-responsive="off">
+                                <div class="slide-action">
+                                    <a class="btn btn--white btn--bordered btn--rounded" href="#">Add To Cart</a>
+                                </div>
+                            </div>
+
+                        </li>
+
+                        <!-- slide 1 -->
+                        <li data-transition="turnoff-vertical"
+                            data-slotamount="default"
+                            data-easein="Power4.easeInOut"
+                            data-easeout="Power4.easeInOut"
+                            data-masterspeed="2000">
+                            <!-- MAIN IMAGE -->
+                            <img src="assets/images/sliders/slide-bg/8.jpg" alt="Slide Background Image" width="1920" height="1280">
+                            <!-- LAYER NR. 1 -->
+                            <div class="tp-caption"
+                                 data-x="center" data-hoffset="0"
+                                 data-y="center" data-voffset="-130"
+                                 data-whitespace="nowrap"
+                                 data-width="none"
+                                 data-height="none"
+                                 data-frames='[{"delay":1500,"speed":1000,"frame":"0","from":"x:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"x:50px;opacity:0;","ease":"Power3.easeInOut"}]'
+                                 data-splitin="none"
+                                 data-splitout="none"
+                                 data-responsive_offset="on">
+                                <div class="slide--subheadline">Deals</div>
+                            </div>
+
+                            <!-- LAYER NR. 2 -->
+                            <div class="tp-caption"
+                                 data-x="center" data-hoffset="0"
+                                 data-y="center" data-voffset="-65"
+                                 data-whitespace="nowrap"
+                                 data-width="none"
+                                 data-height="none"
+                                 data-frames='[{"delay":1750,"speed":1000,"frame":"0","from":"x:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                                 data-splitin="none"
+                                 data-splitout="none"
+                                 data-responsive_offset="on">
+                                <div class="slide--headline">Deal 5<span style="color: orange"> (In 75/-)</span></div>
+                            </div>
+
+                            <!-- LAYER NR. 3 -->
+                            <div class="tp-caption"
+                                 data-x="center" data-hoffset="0"
+                                 data-y="center" data-voffset="20"
+                                 data-width="none"
+                                 data-height="none"
+                                 data-frames='[{"delay":2000,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                                 data-splitin="none"
+                                 data-splitout="none"
+                                 data-responsive_offset="on">
+                                <div class="slide--bio text--center" style="width: 100%">
+                                    Egg + Paratha + Colslaw OR Potato Paratha + Raita OR<br>2x Pori + Curry + Pikle OR Chicken Sandwitch + Colslaw
+                                </div>
+                            </div>
+
+                            <!-- LAYER NR. 4 -->
+                            <div class="tp-caption"
+                                 data-x="center" data-hoffset="0"
+                                 data-y="center" data-voffset="100"
+                                 data-width="none"
+                                 data-height="none"
+                                 data-whitespace="nowrap"
+                                 data-frames='[{"delay":2250,"speed":1500,"frame":"0","from":"x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                                 data-splitin="none"
+                                 data-splitout="none"
+                                 data-actions='[{"event":"click","action":"jumptoslide","slide":"rs-164","delay":""}]'
+                                 data-basealign="slide"
+                                 data-responsive_offset="on"
+                                 data-responsive="off">
+                                <div class="slide-action">
+                                    <a class="btn btn--white btn--bordered btn--rounded" href="#">Add To Cart</a>
+                                </div>
+                            </div>
+
+                        </li>
+
+
+                    </ul>
+                </div>
+                <!-- END REVOLUTION SLIDER -->
+            </div>
+            <!-- END OF SLIDER WRAPPER -->
+        </section>
+
+        <br>

@@ -1,0 +1,129 @@
+﻿
+@{
+    ViewBag.Title = "AddProduct";
+    Layout = "~/Views/Shared/DashboardLayout.cshtml";
+}
+
+@model FoodOrder.Models.fooditem
+@{ List<FoodOrder.Shared.Constants.DDList> lstItemStatus = FoodOrder.Shared.Constants.getItemStatus();
+    List<FoodOrder.Shared.Constants.DDList> lstItemCategory = FoodOrder.Shared.Constants.getItemCategory();
+
+
+
+
+    if (Model != null)
+    {
+        if (!string.IsNullOrEmpty(Model.ITEMSTATUS))
+        {
+            lstItemStatus.Find(g => g.Value.Equals(Model.ITEMSTATUS)).isSelected = true;
+        }
+        if (!string.IsNullOrEmpty(Model.ITEMCATEGORY))
+        {
+            lstItemCategory.Find(g => g.Value.Equals(Model.ITEMCATEGORY)).isSelected = true;
+        }
+
+
+    }
+ 
+}
+@*<div id="OtherLoaderDiv" style="text-align:center;padding-top:100px;">
+    <img src="http://gifimage.net/wp-content/uploads/2017/09/animated-loading-gif-transparent-background-6.gif">
+    <div><h1>Loading...</h1></div>
+</div>*@
+<div class="main-content">
+    <div class="container-fluid">
+        @*<h3 class="page-title">Typography</h3>*@
+        <div class="panel panel-headline">
+            <form action="#" id="frmAddProduct">
+                <input type="submit" style="display:none" />
+                <input type="hidden" required value="@(Model.ITEMID)" id="ITEMID" name="ITEMID" />
+                <div class="panel-body">
+
+                    <h2>Add new item</h2>
+                    <hr />
+                    @*<h3>Faculty Staff</h3>*@
+                    <h4>ITEM STATUS </h4>
+                    <div class="form-group">
+                        <select class="form-control" required value="@(Model.ITEMSTATUS)" id="ITEMSTATUS" name="ITEMSTATUS">
+                            @foreach (var opt in lstItemStatus)
+                            {
+                                string selected = "";
+                                if (opt.isSelected)
+                                {
+                                    selected = "selected";
+                                }
+                                <option value="@opt.Value" @selected>@opt.Text</option>
+                            }
+                        </select>
+                    </div>
+                    <h4>Item Category</h4>
+                    <div class="form-group">
+                        <select class="form-control" @*required*@ value="@(Model.ITEMCATEGORY)" id="ITEMCATEGORY" name="ITEMCATEGORY">
+                            @foreach (var opt in lstItemCategory)
+                            {
+                                string selected = "";
+                                if (opt.isSelected)
+                                {
+                                    selected = "selected";
+                                }
+                                <option value="@opt.Value" @selected>@opt.Text</option>
+                            }
+                        </select>
+                    </div>
+                    <h4>Item Name</h4>
+                    <div class="form-group">
+                        <input type="text" class="form-control" required value="@(Model.ITEMNAME)" id="ITEMNAME" name="ITEMNAME" placeholder="Enter Item name" />
+                    </div>
+                    <h4>Price</h4>
+                    <div class="form-group">
+                        <input type="text" class="form-control" required value="@(Model.PRICE)" id="PRICE" name="PRICE" />
+                    </div>
+
+
+
+
+                    <h4>Item Description</h4>
+                    <div class="form-group">
+                        <textarea type="text" class="form-control" required value="@(Model.ITEMDESCRIPTION)" id="ITEMDESCRIPTION" name="ITEMDESCRIPTION"></textarea>
+                    </div>
+                    <hr />
+                    <div class="form-group">
+                        <button type="button" class="btn btn-success form-control" onclick="SaveItem();">Save</button>
+                    </div>
+
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+
+
+    function SaveItem()
+    {
+        if ($('#frmAddProduct')[0].checkValidity()) {
+            var frmSerialize = $("#frmAddProduct").serialize();
+            swal('Please wait');
+            swal.showLoading();
+            $.post("/Admin/AddProduct", frmSerialize, function (data) {
+                if (data == "@(FoodOrder.Shared.Constants.MSG_SUCCESS.Text)") {
+                    //swal.close();
+                    swal('@(FoodOrder.Shared.Constants.MSG_SUCCESS.Value)').then((result) => {
+                        if (result.value) {
+                            location.href = "/Admin/Index";
+                        }
+                    })
+
+                }
+                else {
+                    swal(data);
+                }
+            })
+        }
+        else {
+            $('#frmAddProduct').find(':submit').click();
+        }
+    }
+</script>

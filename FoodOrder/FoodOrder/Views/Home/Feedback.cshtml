@@ -1,0 +1,144 @@
+﻿@model IEnumerable<FoodOrder.Models.FeedBack>
+
+@{
+    ViewBag.Title = "Feedback";
+    Layout = "~/Views/Shared/_mycustomlayout.cshtml";
+}
+@{
+    bool noRecord = false;
+    int count = Model.Count();
+
+    if (!((count) > 0))
+    {
+        noRecord = true;
+    }
+}
+
+<h2>Your Feedbacks</h2>
+<style>
+</style>
+
+
+<table class="table">
+    <tr>
+
+        <th>
+            @Html.DisplayName("Feedback Date")
+
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RATING)
+        </th>
+        <th>
+            @Html.DisplayName("Feedback Description")
+
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.FBDATE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RATING)
+            </td>
+            <td>
+                <text>  > @Html.DisplayFor(modelItem => item.FBDESCRIPTION)   </text>
+
+
+            </td>
+
+        </tr>
+    }
+
+</table>
+@if (noRecord)
+{
+    <h4 style="text-align:center;font-weight:600;">
+        No Feedback given
+    </h4>
+}
+<br />
+<h4>Give Feedbacks</h4>
+<form id="frmFeedback" action="#" class="job-sign-from">
+    <input type="submit" style="display:none" />
+    <div class="form-group" style="padding-top:20px;"><input id="RATING" name="RATING" type="number" placeholder="Rate Us" min="0" max="5" class="form-control" required /></div>
+    <div class="form-group" style="padding-top:20px;"><textarea id="FBDESCRIPTION" name="FBDESCRIPTION" type="text" placeholder="description" class="form-control" required></textarea></div>
+    @*<div class="form-group">
+            <div class="flex-group">
+                <div class="left"><label class="checkbox-inline"><input type="checkbox" class="" />Keep me logged in</label></div>
+                <div class="right">  <a href="#" class="sign-from-link">Forgot password?</a> </div>
+            </div>
+        </div>*@
+    <div id="ErrMsgDiv" class="form-group" style="padding-top:20px;text-align:left;display:none;">
+        <span id="ErrMsg" style="color: red;font-weight: 600;"></span>
+    </div>
+    <div class="form-group" style="padding-top:20px;">
+        <button style="height:45px;" class="btn btn--secondary btn--rounded" type="button" onclick="submitbtn();">Submit</button>
+    </div>
+</form>
+
+
+
+@section scripts{
+    <script type="text/javascript">
+    $(document).keypress(function (e) {
+        if (e.which == 13) {
+            e.preventDefault();
+            if ($("#RATING").val()) {
+                if ($("#FBDESCRIPTION").val()) {
+                    LogIn();
+                }
+                else {
+                    $("#FBDESCRIPTION").focus();
+                }
+            }
+            else {
+                $("#RATING").focus();
+            }
+        }
+    })
+
+    $("input").keypress(function (e) {
+        $("#ErrMsg").text('');
+        $("#ErrMsgDiv").hide();
+        })
+        function submitbtn() {
+            if ($('#frmFeedback')[0].checkValidity()) {
+                //swal('Please wait');
+                //swal.showLoading();
+
+                var frmSerialize = $("#frmFeedback").serialize();
+
+                $.post("/Home/Feedback", frmSerialize, function (data) {swal.close();
+                if (data == "@(FoodOrder.Shared.Constants.MSG_OK_DBSAVE.Text)") {
+                    location.href = "/Home/Feedback";
+                    }
+                else {
+                    //var msg = "Incorrect Username or Password!"
+                    var msg = "Unable to save";
+                    $("#ErrMsg").text(msg);
+                    $("#ErrMsgDiv").show();
+                    $("#EMAIL").focus();
+                    }
+
+                })
+
+            }
+            else {
+                $('#frmFeedback').find(':submit').click();
+            }
+        }
+
+
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2"></script>
+    <script src="~/Content/Template/assets/js/jquery-2.2.4.min.js"></script>
+    <script src="~/Content/Template/assets/js/plugins.js"></script>
+    <script src="~/Content/Template/assets/js/functions.js"></script>
+}

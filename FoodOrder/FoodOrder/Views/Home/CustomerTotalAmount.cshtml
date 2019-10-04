@@ -1,0 +1,63 @@
+﻿@model IEnumerable<FoodOrder.Models.foodorder>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ORDERID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ORDERDATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CUSTID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AMOUNT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PAYMENTMETHOD)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TOTALAMOUNT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CUSTNAME)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ORDERID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ORDERDATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CUSTID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AMOUNT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PAYMENTMETHOD)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TOTALAMOUNT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CUSTNAME)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

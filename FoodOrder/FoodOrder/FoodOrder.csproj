@@ -1,0 +1,1498 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AA5A1040-878A-44DC-BA4C-EA931DA4DA66}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FoodOrder</RootNamespace>
+    <AssemblyName>FoodOrder</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Google.Protobuf, Version=3.5.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.5.1\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MySql.Data, Version=8.0.13.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.13\lib\net452\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Diagnostics.DiagnosticSource">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.4.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.TelemetryCorrelation">
+      <HintPath>..\packages\Microsoft.AspNet.TelemetryCorrelation.1.0.0\lib\net45\Microsoft.AspNet.TelemetryCorrelation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\admin.cs" />
+    <Compile Include="Models\Cart.cs" />
+    <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\FeedBack.cs" />
+    <Compile Include="Models\fooditem.cs" />
+    <Compile Include="Models\foodorder.cs" />
+    <Compile Include="Models\imagetest.cs" />
+    <Compile Include="Models\ItemCategory.cs" />
+    <Compile Include="Models\mastercard.cs" />
+    <Compile Include="Models\orderdetails.cs" />
+    <Compile Include="Models\payment.cs" />
+    <Compile Include="Models\paymentmethod.cs" />
+    <Compile Include="Models\testmodel.cs" />
+    <Compile Include="Models\transactionWallet.cs" />
+    <Compile Include="Models\VMSignup.cs" />
+    <Compile Include="Models\wallet.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Shared\BaseManager.cs" />
+    <Compile Include="Shared\Constants.cs" />
+    <Compile Include="Shared\Utility.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\DashBoard\assets\css\bootstrap.css" />
+    <Content Include="Content\DashBoard\assets\css\bootstrap.min.css" />
+    <Content Include="Content\DashBoard\assets\css\demo.css" />
+    <Content Include="Content\DashBoard\assets\css\main.css" />
+    <Content Include="Content\DashBoard\assets\img\apple-icon.png" />
+    <Content Include="Content\DashBoard\assets\img\favicon.png" />
+    <Content Include="Content\DashBoard\assets\img\login-bg.jpg" />
+    <Content Include="Content\DashBoard\assets\img\logo-dark.png" />
+    <Content Include="Content\DashBoard\assets\img\profile-bg.png" />
+    <Content Include="Content\DashBoard\assets\img\user-medium.png" />
+    <Content Include="Content\DashBoard\assets\img\user.png" />
+    <Content Include="Content\DashBoard\assets\img\user1.png" />
+    <Content Include="Content\DashBoard\assets\img\user2.png" />
+    <Content Include="Content\DashBoard\assets\img\user3.png" />
+    <Content Include="Content\DashBoard\assets\img\user4.png" />
+    <Content Include="Content\DashBoard\assets\img\user5.png" />
+    <Content Include="Content\DashBoard\assets\scripts\klorofil-common.js" />
+    <Content Include="Content\DashBoard\assets\vendor\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="Content\DashBoard\assets\vendor\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="Content\DashBoard\assets\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="Content\DashBoard\assets\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Content\DashBoard\assets\vendor\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\DashBoard\assets\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="Content\DashBoard\assets\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Content\DashBoard\assets\vendor\bootstrap\js\npm.js" />
+    <Content Include="Content\DashBoard\assets\vendor\chartist\css\chartist-custom.css" />
+    <Content Include="Content\DashBoard\assets\vendor\chartist\css\chartist.css" />
+    <Content Include="Content\DashBoard\assets\vendor\chartist\css\chartist.min.css" />
+    <Content Include="Content\DashBoard\assets\vendor\chartist\js\chartist.js" />
+    <Content Include="Content\DashBoard\assets\vendor\chartist\js\chartist.min.js" />
+    <Content Include="Content\DashBoard\assets\vendor\font-awesome\css\font-awesome.css" />
+    <Content Include="Content\DashBoard\assets\vendor\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Content\DashBoard\assets\vendor\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\DashBoard\assets\vendor\jquery-slimscroll\jquery.slimscroll.js" />
+    <Content Include="Content\DashBoard\assets\vendor\jquery-slimscroll\jquery.slimscroll.min.js" />
+    <Content Include="Content\DashBoard\assets\vendor\jquery.easy-pie-chart\angular.easypiechart.js" />
+    <Content Include="Content\DashBoard\assets\vendor\jquery.easy-pie-chart\angular.easypiechart.min.js" />
+    <Content Include="Content\DashBoard\assets\vendor\jquery.easy-pie-chart\easypiechart.js" />
+    <Content Include="Content\DashBoard\assets\vendor\jquery.easy-pie-chart\easypiechart.min.js" />
+    <Content Include="Content\DashBoard\assets\vendor\jquery.easy-pie-chart\jquery.easypiechart.js" />
+    <Content Include="Content\DashBoard\assets\vendor\jquery.easy-pie-chart\jquery.easypiechart.min.js" />
+    <Content Include="Content\DashBoard\assets\vendor\jquery\jquery.js" />
+    <Content Include="Content\DashBoard\assets\vendor\jquery\jquery.min.js" />
+    <Content Include="Content\DashBoard\assets\vendor\linearicons\fonts\Linearicons-Free.svg" />
+    <Content Include="Content\DashBoard\assets\vendor\linearicons\style.css" />
+    <Content Include="Content\DashBoard\assets\vendor\toastr\toastr.css" />
+    <Content Include="Content\DashBoard\assets\vendor\toastr\toastr.js" />
+    <Content Include="Content\DashBoard\assets\vendor\toastr\toastr.min.css" />
+    <Content Include="Content\DashBoard\assets\vendor\toastr\toastr.min.js" />
+    <Content Include="Content\DashBoard\charts.html" />
+    <Content Include="Content\DashBoard\elements.html" />
+    <Content Include="Content\DashBoard\icons.html" />
+    <Content Include="Content\DashBoard\index.html" />
+    <Content Include="Content\DashBoard\notifications.html" />
+    <Content Include="Content\DashBoard\page-lockscreen.html" />
+    <Content Include="Content\DashBoard\page-login.html" />
+    <Content Include="Content\DashBoard\page-profile.html" />
+    <Content Include="Content\DashBoard\panels.html" />
+    <Content Include="Content\DashBoard\tables.html" />
+    <Content Include="Content\DashBoard\typography.html" />
+    <Content Include="Content\Template\assets\css\bootstrap.min.css" />
+    <Content Include="Content\Template\assets\css\external.css" />
+    <Content Include="Content\Template\assets\css\style-arabic.css" />
+    <Content Include="Content\Template\assets\css\style-dark.css" />
+    <Content Include="Content\Template\assets\css\style-rtl.css" />
+    <Content Include="Content\Template\assets\css\style.css" />
+    <Content Include="Content\Template\assets\css\vendors\animate.css" />
+    <Content Include="Content\Template\assets\css\vendors\animate.min.css" />
+    <Content Include="Content\Template\assets\css\vendors\bootstrap.css" />
+    <Content Include="Content\Template\assets\css\vendors\bootstrap.min.css" />
+    <Content Include="Content\Template\assets\css\vendors\font-awesome.css" />
+    <Content Include="Content\Template\assets\css\vendors\font-awesome.min.css" />
+    <Content Include="Content\Template\assets\css\vendors\magnific-popup.css" />
+    <Content Include="Content\Template\assets\css\vendors\stroke-gap-icons.css" />
+    <Content Include="Content\Template\assets\images\background\1.jpg" />
+    <Content Include="Content\Template\assets\images\background\10.jpg" />
+    <Content Include="Content\Template\assets\images\background\11.jpg" />
+    <Content Include="Content\Template\assets\images\background\12.jpg" />
+    <Content Include="Content\Template\assets\images\background\13.jpg" />
+    <Content Include="Content\Template\assets\images\background\14.jpg" />
+    <Content Include="Content\Template\assets\images\background\15.jpg" />
+    <Content Include="Content\Template\assets\images\background\16.jpg" />
+    <Content Include="Content\Template\assets\images\background\17.jpg" />
+    <Content Include="Content\Template\assets\images\background\18.jpg" />
+    <Content Include="Content\Template\assets\images\background\19.jpg" />
+    <Content Include="Content\Template\assets\images\background\2.jpg" />
+    <Content Include="Content\Template\assets\images\background\20.jpg" />
+    <Content Include="Content\Template\assets\images\background\21.jpg" />
+    <Content Include="Content\Template\assets\images\background\22.jpg" />
+    <Content Include="Content\Template\assets\images\background\23.jpg" />
+    <Content Include="Content\Template\assets\images\background\24.jpg" />
+    <Content Include="Content\Template\assets\images\background\25.jpg" />
+    <Content Include="Content\Template\assets\images\background\26.jpg" />
+    <Content Include="Content\Template\assets\images\background\27.jpg" />
+    <Content Include="Content\Template\assets\images\background\28.jpg" />
+    <Content Include="Content\Template\assets\images\background\29.jpg" />
+    <Content Include="Content\Template\assets\images\background\3.jpg" />
+    <Content Include="Content\Template\assets\images\background\30.jpg" />
+    <Content Include="Content\Template\assets\images\background\4.jpg" />
+    <Content Include="Content\Template\assets\images\background\5.jpg" />
+    <Content Include="Content\Template\assets\images\background\6.jpg" />
+    <Content Include="Content\Template\assets\images\background\7.jpg" />
+    <Content Include="Content\Template\assets\images\background\8.jpg" />
+    <Content Include="Content\Template\assets\images\background\9.jpg" />
+    <Content Include="Content\Template\assets\images\background\patterns\bg-body.jpg" />
+    <Content Include="Content\Template\assets\images\background\shapes\arrow-dark.png" />
+    <Content Include="Content\Template\assets\images\background\shapes\arrow-dark2.png" />
+    <Content Include="Content\Template\assets\images\background\shapes\arrow-down-dark.png" />
+    <Content Include="Content\Template\assets\images\background\shapes\arrow-down-dark2.png" />
+    <Content Include="Content\Template\assets\images\background\shapes\arrow-down-white.png" />
+    <Content Include="Content\Template\assets\images\background\shapes\arrow-down.png" />
+    <Content Include="Content\Template\assets\images\background\shapes\arrow-up-dark.png" />
+    <Content Include="Content\Template\assets\images\background\shapes\arrow-up-theme.png" />
+    <Content Include="Content\Template\assets\images\background\shapes\arrow-up.png" />
+    <Content Include="Content\Template\assets\images\background\shapes\divider.png" />
+    <Content Include="Content\Template\assets\images\background\shapes\divider2.png" />
+    <Content Include="Content\Template\assets\images\background\shapes\shape-10down.png" />
+    <Content Include="Content\Template\assets\images\background\shapes\shape-10up.png" />
+    <Content Include="Content\Template\assets\images\background\shapes\shape-11.png" />
+    <Content Include="Content\Template\assets\images\background\shapes\shape-13.png" />
+    <Content Include="Content\Template\assets\images\background\shapes\shape-14down.png" />
+    <Content Include="Content\Template\assets\images\background\shapes\shape-14up.png" />
+    <Content Include="Content\Template\assets\images\background\shapes\shape-2down.png" />
+    <Content Include="Content\Template\assets\images\background\shapes\shape-2up.png" />
+    <Content Include="Content\Template\assets\images\background\shapes\shape-3down.png" />
+    <Content Include="Content\Template\assets\images\background\shapes\shape-3up.png" />
+    <Content Include="Content\Template\assets\images\background\shapes\shape-4.png" />
+    <Content Include="Content\Template\assets\images\background\shapes\shape-4down.png" />
+    <Content Include="Content\Template\assets\images\background\shapes\shape-4up.png" />
+    <Content Include="Content\Template\assets\images\background\shapes\shape-5.png" />
+    <Content Include="Content\Template\assets\images\background\shapes\shape-5down.png" />
+    <Content Include="Content\Template\assets\images\background\shapes\shape-5up.png" />
+    <Content Include="Content\Template\assets\images\background\shapes\shape-6down.png" />
+    <Content Include="Content\Template\assets\images\background\shapes\shape-6up.png" />
+    <Content Include="Content\Template\assets\images\background\shapes\shape-7down.png" />
+    <Content Include="Content\Template\assets\images\background\shapes\shape-7up.png" />
+    <Content Include="Content\Template\assets\images\background\shapes\shape-8down.png" />
+    <Content Include="Content\Template\assets\images\background\shapes\shape-8up.png" />
+    <Content Include="Content\Template\assets\images\background\shapes\shape-9.png" />
+    <Content Include="Content\Template\assets\images\background\shapes\shape-header.png" />
+    <Content Include="Content\Template\assets\images\background\shapes\shape-left.png" />
+    <Content Include="Content\Template\assets\images\background\shapes\shape-right.png" />
+    <Content Include="Content\Template\assets\images\background\shapes\shape-topbar.png" />
+    <Content Include="Content\Template\assets\images\banners\1.jpg" />
+    <Content Include="Content\Template\assets\images\banners\10.jpg" />
+    <Content Include="Content\Template\assets\images\banners\11.jpg" />
+    <Content Include="Content\Template\assets\images\banners\12.jpg" />
+    <Content Include="Content\Template\assets\images\banners\13.jpg" />
+    <Content Include="Content\Template\assets\images\banners\14.jpg" />
+    <Content Include="Content\Template\assets\images\banners\15.jpg" />
+    <Content Include="Content\Template\assets\images\banners\16.jpg" />
+    <Content Include="Content\Template\assets\images\banners\17.jpg" />
+    <Content Include="Content\Template\assets\images\banners\2.jpg" />
+    <Content Include="Content\Template\assets\images\banners\3.jpg" />
+    <Content Include="Content\Template\assets\images\banners\4.jpg" />
+    <Content Include="Content\Template\assets\images\banners\5.jpg" />
+    <Content Include="Content\Template\assets\images\banners\6.jpg" />
+    <Content Include="Content\Template\assets\images\banners\7.jpg" />
+    <Content Include="Content\Template\assets\images\banners\8.jpg" />
+    <Content Include="Content\Template\assets\images\banners\9.jpg" />
+    <Content Include="Content\Template\assets\images\blog\grid\1.jpg" />
+    <Content Include="Content\Template\assets\images\blog\grid\2.jpg" />
+    <Content Include="Content\Template\assets\images\blog\grid\3.jpg" />
+    <Content Include="Content\Template\assets\images\blog\grid\4.jpg" />
+    <Content Include="Content\Template\assets\images\blog\grid\5.jpg" />
+    <Content Include="Content\Template\assets\images\blog\grid\6.jpg" />
+    <Content Include="Content\Template\assets\images\blog\grid\7.jpg" />
+    <Content Include="Content\Template\assets\images\blog\grid\8.jpg" />
+    <Content Include="Content\Template\assets\images\blog\grid\9.jpg" />
+    <Content Include="Content\Template\assets\images\blog\small\1.jpg" />
+    <Content Include="Content\Template\assets\images\blog\small\2.jpg" />
+    <Content Include="Content\Template\assets\images\blog\small\3.jpg" />
+    <Content Include="Content\Template\assets\images\blog\standard\1.jpg" />
+    <Content Include="Content\Template\assets\images\blog\standard\2.jpg" />
+    <Content Include="Content\Template\assets\images\blog\standard\3.jpg" />
+    <Content Include="Content\Template\assets\images\blog\standard\4.jpg" />
+    <Content Include="Content\Template\assets\images\blog\thumb\1.jpg" />
+    <Content Include="Content\Template\assets\images\blog\thumb\2.jpg" />
+    <Content Include="Content\Template\assets\images\blog\thumb\3.jpg" />
+    <Content Include="Content\Template\assets\images\clients\1.png" />
+    <Content Include="Content\Template\assets\images\clients\10.png" />
+    <Content Include="Content\Template\assets\images\clients\11.png" />
+    <Content Include="Content\Template\assets\images\clients\12.png" />
+    <Content Include="Content\Template\assets\images\clients\13.png" />
+    <Content Include="Content\Template\assets\images\clients\14.png" />
+    <Content Include="Content\Template\assets\images\clients\15.png" />
+    <Content Include="Content\Template\assets\images\clients\16.png" />
+    <Content Include="Content\Template\assets\images\clients\17.png" />
+    <Content Include="Content\Template\assets\images\clients\18.png" />
+    <Content Include="Content\Template\assets\images\clients\19.png" />
+    <Content Include="Content\Template\assets\images\clients\2.png" />
+    <Content Include="Content\Template\assets\images\clients\20.png" />
+    <Content Include="Content\Template\assets\images\clients\21.png" />
+    <Content Include="Content\Template\assets\images\clients\22.png" />
+    <Content Include="Content\Template\assets\images\clients\3.png" />
+    <Content Include="Content\Template\assets\images\clients\4.png" />
+    <Content Include="Content\Template\assets\images\clients\5.png" />
+    <Content Include="Content\Template\assets\images\clients\6.png" />
+    <Content Include="Content\Template\assets\images\clients\7.png" />
+    <Content Include="Content\Template\assets\images\clients\8.png" />
+    <Content Include="Content\Template\assets\images\clients\9.png" />
+    <Content Include="Content\Template\assets\images\counter\1.jpg" />
+    <Content Include="Content\Template\assets\images\favicon\favicon.png" />
+    <Content Include="Content\Template\assets\images\gallery\1.jpg" />
+    <Content Include="Content\Template\assets\images\gallery\10.jpg" />
+    <Content Include="Content\Template\assets\images\gallery\11.jpg" />
+    <Content Include="Content\Template\assets\images\gallery\12.jpg" />
+    <Content Include="Content\Template\assets\images\gallery\2.jpg" />
+    <Content Include="Content\Template\assets\images\gallery\3.jpg" />
+    <Content Include="Content\Template\assets\images\gallery\4.jpg" />
+    <Content Include="Content\Template\assets\images\gallery\5.jpg" />
+    <Content Include="Content\Template\assets\images\gallery\6.jpg" />
+    <Content Include="Content\Template\assets\images\gallery\7.jpg" />
+    <Content Include="Content\Template\assets\images\gallery\8.jpg" />
+    <Content Include="Content\Template\assets\images\gallery\9.jpg" />
+    <Content Include="Content\Template\assets\images\gallery\full\1.jpg" />
+    <Content Include="Content\Template\assets\images\gallery\full\10.jpg" />
+    <Content Include="Content\Template\assets\images\gallery\full\11.jpg" />
+    <Content Include="Content\Template\assets\images\gallery\full\12.jpg" />
+    <Content Include="Content\Template\assets\images\gallery\full\2.jpg" />
+    <Content Include="Content\Template\assets\images\gallery\full\3.jpg" />
+    <Content Include="Content\Template\assets\images\gallery\full\4.jpg" />
+    <Content Include="Content\Template\assets\images\gallery\full\5.jpg" />
+    <Content Include="Content\Template\assets\images\gallery\full\6.jpg" />
+    <Content Include="Content\Template\assets\images\gallery\full\7.jpg" />
+    <Content Include="Content\Template\assets\images\gallery\full\8.jpg" />
+    <Content Include="Content\Template\assets\images\gallery\full\9.jpg" />
+    <Content Include="Content\Template\assets\images\gmap\maker.png" />
+    <Content Include="Content\Template\assets\images\heading\signiture-white.png" />
+    <Content Include="Content\Template\assets\images\heading\signiture.png" />
+    <Content Include="Content\Template\assets\images\icons\1.png" />
+    <Content Include="Content\Template\assets\images\icons\10.png" />
+    <Content Include="Content\Template\assets\images\icons\11.png" />
+    <Content Include="Content\Template\assets\images\icons\12.png" />
+    <Content Include="Content\Template\assets\images\icons\13.png" />
+    <Content Include="Content\Template\assets\images\icons\14.png" />
+    <Content Include="Content\Template\assets\images\icons\15.png" />
+    <Content Include="Content\Template\assets\images\icons\2.png" />
+    <Content Include="Content\Template\assets\images\icons\3.png" />
+    <Content Include="Content\Template\assets\images\icons\4.png" />
+    <Content Include="Content\Template\assets\images\icons\5.png" />
+    <Content Include="Content\Template\assets\images\icons\6.png" />
+    <Content Include="Content\Template\assets\images\icons\7.png" />
+    <Content Include="Content\Template\assets\images\icons\8.png" />
+    <Content Include="Content\Template\assets\images\icons\9.png" />
+    <Content Include="Content\Template\assets\images\icons\zoom.png" />
+    <Content Include="Content\Template\assets\images\landing\1.jpg" />
+    <Content Include="Content\Template\assets\images\landing\3.jpg" />
+    <Content Include="Content\Template\assets\images\landing\demos\1.jpg" />
+    <Content Include="Content\Template\assets\images\landing\demos\10.jpg" />
+    <Content Include="Content\Template\assets\images\landing\demos\11.jpg" />
+    <Content Include="Content\Template\assets\images\landing\demos\12.jpg" />
+    <Content Include="Content\Template\assets\images\landing\demos\13.jpg" />
+    <Content Include="Content\Template\assets\images\landing\demos\14.jpg" />
+    <Content Include="Content\Template\assets\images\landing\demos\15.jpg" />
+    <Content Include="Content\Template\assets\images\landing\demos\16.jpg" />
+    <Content Include="Content\Template\assets\images\landing\demos\17.jpg" />
+    <Content Include="Content\Template\assets\images\landing\demos\18.jpg" />
+    <Content Include="Content\Template\assets\images\landing\demos\19.jpg" />
+    <Content Include="Content\Template\assets\images\landing\demos\2.jpg" />
+    <Content Include="Content\Template\assets\images\landing\demos\20.jpg" />
+    <Content Include="Content\Template\assets\images\landing\demos\21.jpg" />
+    <Content Include="Content\Template\assets\images\landing\demos\22.jpg" />
+    <Content Include="Content\Template\assets\images\landing\demos\23.jpg" />
+    <Content Include="Content\Template\assets\images\landing\demos\24.jpg" />
+    <Content Include="Content\Template\assets\images\landing\demos\25.jpg" />
+    <Content Include="Content\Template\assets\images\landing\demos\26.jpg" />
+    <Content Include="Content\Template\assets\images\landing\demos\27.jpg" />
+    <Content Include="Content\Template\assets\images\landing\demos\28.jpg" />
+    <Content Include="Content\Template\assets\images\landing\demos\29.jpg" />
+    <Content Include="Content\Template\assets\images\landing\demos\3.jpg" />
+    <Content Include="Content\Template\assets\images\landing\demos\30.jpg" />
+    <Content Include="Content\Template\assets\images\landing\demos\31.jpg" />
+    <Content Include="Content\Template\assets\images\landing\demos\32.jpg" />
+    <Content Include="Content\Template\assets\images\landing\demos\33.jpg" />
+    <Content Include="Content\Template\assets\images\landing\demos\34.jpg" />
+    <Content Include="Content\Template\assets\images\landing\demos\35.jpg" />
+    <Content Include="Content\Template\assets\images\landing\demos\36.jpg" />
+    <Content Include="Content\Template\assets\images\landing\demos\37.jpg" />
+    <Content Include="Content\Template\assets\images\landing\demos\38.jpg" />
+    <Content Include="Content\Template\assets\images\landing\demos\39.jpg" />
+    <Content Include="Content\Template\assets\images\landing\demos\4.jpg" />
+    <Content Include="Content\Template\assets\images\landing\demos\5.jpg" />
+    <Content Include="Content\Template\assets\images\landing\demos\6.jpg" />
+    <Content Include="Content\Template\assets\images\landing\demos\7.jpg" />
+    <Content Include="Content\Template\assets\images\landing\demos\8.jpg" />
+    <Content Include="Content\Template\assets\images\landing\demos\9.jpg" />
+    <Content Include="Content\Template\assets\images\landing\icons\1.jpg" />
+    <Content Include="Content\Template\assets\images\landing\icons\2.jpg" />
+    <Content Include="Content\Template\assets\images\landing\icons\3.jpg" />
+    <Content Include="Content\Template\assets\images\landing\icons\4.jpg" />
+    <Content Include="Content\Template\assets\images\landing\icons\5.jpg" />
+    <Content Include="Content\Template\assets\images\landing\icons\6.jpg" />
+    <Content Include="Content\Template\assets\images\logo\logo-dark.png" />
+    <Content Include="Content\Template\assets\images\logo\logo-footer.png" />
+    <Content Include="Content\Template\assets\images\logo\logo-light.png" />
+    <Content Include="Content\Template\assets\images\logo\logo-long-brown.png" />
+    <Content Include="Content\Template\assets\images\logo\logo-long.png" />
+    <Content Include="Content\Template\assets\images\menu\dish\1.jpg" />
+    <Content Include="Content\Template\assets\images\menu\dish\10.jpg" />
+    <Content Include="Content\Template\assets\images\menu\dish\11.jpg" />
+    <Content Include="Content\Template\assets\images\menu\dish\12.jpg" />
+    <Content Include="Content\Template\assets\images\menu\dish\13.jpg" />
+    <Content Include="Content\Template\assets\images\menu\dish\14.jpg" />
+    <Content Include="Content\Template\assets\images\menu\dish\15.jpg" />
+    <Content Include="Content\Template\assets\images\menu\dish\16.jpg" />
+    <Content Include="Content\Template\assets\images\menu\dish\17.jpg" />
+    <Content Include="Content\Template\assets\images\menu\dish\18.jpg" />
+    <Content Include="Content\Template\assets\images\menu\dish\19.jpg" />
+    <Content Include="Content\Template\assets\images\menu\dish\2.jpg" />
+    <Content Include="Content\Template\assets\images\menu\dish\20.jpg" />
+    <Content Include="Content\Template\assets\images\menu\dish\21.jpg" />
+    <Content Include="Content\Template\assets\images\menu\dish\23.jpg" />
+    <Content Include="Content\Template\assets\images\menu\dish\24.jpg" />
+    <Content Include="Content\Template\assets\images\menu\dish\25.jpg" />
+    <Content Include="Content\Template\assets\images\menu\dish\26.jpg" />
+    <Content Include="Content\Template\assets\images\menu\dish\27.jpg" />
+    <Content Include="Content\Template\assets\images\menu\dish\28.jpg" />
+    <Content Include="Content\Template\assets\images\menu\dish\29.jpg" />
+    <Content Include="Content\Template\assets\images\menu\dish\3.jpg" />
+    <Content Include="Content\Template\assets\images\menu\dish\30.jpg" />
+    <Content Include="Content\Template\assets\images\menu\dish\31.jpg" />
+    <Content Include="Content\Template\assets\images\menu\dish\32.jpg" />
+    <Content Include="Content\Template\assets\images\menu\dish\33.jpg" />
+    <Content Include="Content\Template\assets\images\menu\dish\34.jpg" />
+    <Content Include="Content\Template\assets\images\menu\dish\35.jpg" />
+    <Content Include="Content\Template\assets\images\menu\dish\36.jpg" />
+    <Content Include="Content\Template\assets\images\menu\dish\37.jpg" />
+    <Content Include="Content\Template\assets\images\menu\dish\38.jpg" />
+    <Content Include="Content\Template\assets\images\menu\dish\4.jpg" />
+    <Content Include="Content\Template\assets\images\menu\dish\5.jpg" />
+    <Content Include="Content\Template\assets\images\menu\dish\6.jpg" />
+    <Content Include="Content\Template\assets\images\menu\dish\7.jpg" />
+    <Content Include="Content\Template\assets\images\menu\dish\8.jpg" />
+    <Content Include="Content\Template\assets\images\menu\dish\9.jpg" />
+    <Content Include="Content\Template\assets\images\menu\gallery\1.jpg" />
+    <Content Include="Content\Template\assets\images\menu\gallery\10.jpg" />
+    <Content Include="Content\Template\assets\images\menu\gallery\11.jpg" />
+    <Content Include="Content\Template\assets\images\menu\gallery\12.jpg" />
+    <Content Include="Content\Template\assets\images\menu\gallery\13.jpg" />
+    <Content Include="Content\Template\assets\images\menu\gallery\14.jpg" />
+    <Content Include="Content\Template\assets\images\menu\gallery\15.jpg" />
+    <Content Include="Content\Template\assets\images\menu\gallery\16.jpg" />
+    <Content Include="Content\Template\assets\images\menu\gallery\17.jpg" />
+    <Content Include="Content\Template\assets\images\menu\gallery\18.jpg" />
+    <Content Include="Content\Template\assets\images\menu\gallery\19.jpg" />
+    <Content Include="Content\Template\assets\images\menu\gallery\2.jpg" />
+    <Content Include="Content\Template\assets\images\menu\gallery\20.jpg" />
+    <Content Include="Content\Template\assets\images\menu\gallery\21.jpg" />
+    <Content Include="Content\Template\assets\images\menu\gallery\22.jpg" />
+    <Content Include="Content\Template\assets\images\menu\gallery\23.jpg" />
+    <Content Include="Content\Template\assets\images\menu\gallery\24.jpg" />
+    <Content Include="Content\Template\assets\images\menu\gallery\25.jpg" />
+    <Content Include="Content\Template\assets\images\menu\gallery\26.jpg" />
+    <Content Include="Content\Template\assets\images\menu\gallery\27.jpg" />
+    <Content Include="Content\Template\assets\images\menu\gallery\28.jpg" />
+    <Content Include="Content\Template\assets\images\menu\gallery\29.jpg" />
+    <Content Include="Content\Template\assets\images\menu\gallery\3.jpg" />
+    <Content Include="Content\Template\assets\images\menu\gallery\30.jpg" />
+    <Content Include="Content\Template\assets\images\menu\gallery\31.jpg" />
+    <Content Include="Content\Template\assets\images\menu\gallery\32.jpg" />
+    <Content Include="Content\Template\assets\images\menu\gallery\33.jpg" />
+    <Content Include="Content\Template\assets\images\menu\gallery\34.jpg" />
+    <Content Include="Content\Template\assets\images\menu\gallery\35.jpg" />
+    <Content Include="Content\Template\assets\images\menu\gallery\36.jpg" />
+    <Content Include="Content\Template\assets\images\menu\gallery\37.jpg" />
+    <Content Include="Content\Template\assets\images\menu\gallery\38.jpg" />
+    <Content Include="Content\Template\assets\images\menu\gallery\39.jpg" />
+    <Content Include="Content\Template\assets\images\menu\gallery\4.jpg" />
+    <Content Include="Content\Template\assets\images\menu\gallery\40.jpg" />
+    <Content Include="Content\Template\assets\images\menu\gallery\41.jpg" />
+    <Content Include="Content\Template\assets\images\menu\gallery\42.jpg" />
+    <Content Include="Content\Template\assets\images\menu\gallery\5.jpg" />
+    <Content Include="Content\Template\assets\images\menu\gallery\6.jpg" />
+    <Content Include="Content\Template\assets\images\menu\gallery\7.jpg" />
+    <Content Include="Content\Template\assets\images\menu\gallery\8.jpg" />
+    <Content Include="Content\Template\assets\images\menu\gallery\9.jpg" />
+    <Content Include="Content\Template\assets\images\menu\menu-board\1.jpg" />
+    <Content Include="Content\Template\assets\images\menu\menu-board\10.jpg" />
+    <Content Include="Content\Template\assets\images\menu\menu-board\11.jpg" />
+    <Content Include="Content\Template\assets\images\menu\menu-board\12.jpg" />
+    <Content Include="Content\Template\assets\images\menu\menu-board\13.jpg" />
+    <Content Include="Content\Template\assets\images\menu\menu-board\14.jpg" />
+    <Content Include="Content\Template\assets\images\menu\menu-board\15.jpg" />
+    <Content Include="Content\Template\assets\images\menu\menu-board\16.jpg" />
+    <Content Include="Content\Template\assets\images\menu\menu-board\17.jpg" />
+    <Content Include="Content\Template\assets\images\menu\menu-board\18.jpg" />
+    <Content Include="Content\Template\assets\images\menu\menu-board\19.jpg" />
+    <Content Include="Content\Template\assets\images\menu\menu-board\2.jpg" />
+    <Content Include="Content\Template\assets\images\menu\menu-board\20.jpg" />
+    <Content Include="Content\Template\assets\images\menu\menu-board\21.jpg" />
+    <Content Include="Content\Template\assets\images\menu\menu-board\22.jpg" />
+    <Content Include="Content\Template\assets\images\menu\menu-board\23.jpg" />
+    <Content Include="Content\Template\assets\images\menu\menu-board\24.jpg" />
+    <Content Include="Content\Template\assets\images\menu\menu-board\3.jpg" />
+    <Content Include="Content\Template\assets\images\menu\menu-board\4.jpg" />
+    <Content Include="Content\Template\assets\images\menu\menu-board\5.jpg" />
+    <Content Include="Content\Template\assets\images\menu\menu-board\6.jpg" />
+    <Content Include="Content\Template\assets\images\menu\menu-board\7.jpg" />
+    <Content Include="Content\Template\assets\images\menu\menu-board\8.jpg" />
+    <Content Include="Content\Template\assets\images\menu\menu-board\9.jpg" />
+    <Content Include="Content\Template\assets\images\menu\menu-grid\1.jpg" />
+    <Content Include="Content\Template\assets\images\menu\menu-grid\10.jpg" />
+    <Content Include="Content\Template\assets\images\menu\menu-grid\11.jpg" />
+    <Content Include="Content\Template\assets\images\menu\menu-grid\12.jpg" />
+    <Content Include="Content\Template\assets\images\menu\menu-grid\13.jpg" />
+    <Content Include="Content\Template\assets\images\menu\menu-grid\14.jpg" />
+    <Content Include="Content\Template\assets\images\menu\menu-grid\15.jpg" />
+    <Content Include="Content\Template\assets\images\menu\menu-grid\16.jpg" />
+    <Content Include="Content\Template\assets\images\menu\menu-grid\17.jpg" />
+    <Content Include="Content\Template\assets\images\menu\menu-grid\18.jpg" />
+    <Content Include="Content\Template\assets\images\menu\menu-grid\19.jpg" />
+    <Content Include="Content\Template\assets\images\menu\menu-grid\2.jpg" />
+    <Content Include="Content\Template\assets\images\menu\menu-grid\20.jpg" />
+    <Content Include="Content\Template\assets\images\menu\menu-grid\21.jpg" />
+    <Content Include="Content\Template\assets\images\menu\menu-grid\22.jpg" />
+    <Content Include="Content\Template\assets\images\menu\menu-grid\23.jpg" />
+    <Content Include="Content\Template\assets\images\menu\menu-grid\24.jpg" />
+    <Content Include="Content\Template\assets\images\menu\menu-grid\25.jpg" />
+    <Content Include="Content\Template\assets\images\menu\menu-grid\26.jpg" />
+    <Content Include="Content\Template\assets\images\menu\menu-grid\27.jpg" />
+    <Content Include="Content\Template\assets\images\menu\menu-grid\28.jpg" />
+    <Content Include="Content\Template\assets\images\menu\menu-grid\29.jpg" />
+    <Content Include="Content\Template\assets\images\menu\menu-grid\3.jpg" />
+    <Content Include="Content\Template\assets\images\menu\menu-grid\30.jpg" />
+    <Content Include="Content\Template\assets\images\menu\menu-grid\31.jpg" />
+    <Content Include="Content\Template\assets\images\menu\menu-grid\32.jpg" />
+    <Content Include="Content\Template\assets\images\menu\menu-grid\4.jpg" />
+    <Content Include="Content\Template\assets\images\menu\menu-grid\5.jpg" />
+    <Content Include="Content\Template\assets\images\menu\menu-grid\6.jpg" />
+    <Content Include="Content\Template\assets\images\menu\menu-grid\7.jpg" />
+    <Content Include="Content\Template\assets\images\menu\menu-grid\8.jpg" />
+    <Content Include="Content\Template\assets\images\menu\menu-grid\9.jpg" />
+    <Content Include="Content\Template\assets\images\menu\simple-banner\1.jpg" />
+    <Content Include="Content\Template\assets\images\menu\simple-banner\2.jpg" />
+    <Content Include="Content\Template\assets\images\menu\simple-banner\3.jpg" />
+    <Content Include="Content\Template\assets\images\menu\simple-banner\4.jpg" />
+    <Content Include="Content\Template\assets\images\menu\simple-banner\5.jpg" />
+    <Content Include="Content\Template\assets\images\menu\simple-banner\6.jpg" />
+    <Content Include="Content\Template\assets\images\menu\simple-banner\full\4.jpg" />
+    <Content Include="Content\Template\assets\images\menu\simple-banner\full\5.jpg" />
+    <Content Include="Content\Template\assets\images\menu\simple-banner\full\6.jpg" />
+    <Content Include="Content\Template\assets\images\page-title\1.jpg" />
+    <Content Include="Content\Template\assets\images\page-title\10.jpg" />
+    <Content Include="Content\Template\assets\images\page-title\11.jpg" />
+    <Content Include="Content\Template\assets\images\page-title\12.jpg" />
+    <Content Include="Content\Template\assets\images\page-title\13.jpg" />
+    <Content Include="Content\Template\assets\images\page-title\14.jpg" />
+    <Content Include="Content\Template\assets\images\page-title\15.jpg" />
+    <Content Include="Content\Template\assets\images\page-title\16.jpg" />
+    <Content Include="Content\Template\assets\images\page-title\2.jpg" />
+    <Content Include="Content\Template\assets\images\page-title\3.jpg" />
+    <Content Include="Content\Template\assets\images\page-title\4.jpg" />
+    <Content Include="Content\Template\assets\images\page-title\5.jpg" />
+    <Content Include="Content\Template\assets\images\page-title\6.jpg" />
+    <Content Include="Content\Template\assets\images\page-title\7.jpg" />
+    <Content Include="Content\Template\assets\images\page-title\9.jpg" />
+    <Content Include="Content\Template\assets\images\page-title\chef-hat.png" />
+    <Content Include="Content\Template\assets\images\page-title\download.jpg" />
+    <Content Include="Content\Template\assets\images\page-title\download2.jpg" />
+    <Content Include="Content\Template\assets\images\page-title\feedback.jpg" />
+    <Content Include="Content\Template\assets\images\page-title\profile.png" />
+    <Content Include="Content\Template\assets\images\profilepic\ProfilePic.jpg" />
+    <Content Include="Content\Template\assets\images\profilepic\ProfilePic3.jpg" />
+    <Content Include="Content\Template\assets\images\shop\full\1.jpg" />
+    <Content Include="Content\Template\assets\images\shop\grid\1.jpg" />
+    <Content Include="Content\Template\assets\images\shop\grid\10.jpg" />
+    <Content Include="Content\Template\assets\images\shop\grid\11.jpg" />
+    <Content Include="Content\Template\assets\images\shop\grid\12.jpg" />
+    <Content Include="Content\Template\assets\images\shop\grid\2.jpg" />
+    <Content Include="Content\Template\assets\images\shop\grid\3.jpg" />
+    <Content Include="Content\Template\assets\images\shop\grid\4.jpg" />
+    <Content Include="Content\Template\assets\images\shop\grid\5.jpg" />
+    <Content Include="Content\Template\assets\images\shop\grid\6.jpg" />
+    <Content Include="Content\Template\assets\images\shop\grid\7.jpg" />
+    <Content Include="Content\Template\assets\images\shop\grid\8.jpg" />
+    <Content Include="Content\Template\assets\images\shop\grid\9.jpg" />
+    <Content Include="Content\Template\assets\images\shop\grid\chickenbiryani.jpg" />
+    <Content Include="Content\Template\assets\images\shop\grid\clubsandwitch.jpg" />
+    <Content Include="Content\Template\assets\images\shop\grid\coffee.jpg" />
+    <Content Include="Content\Template\assets\images\shop\grid\pasta.jpg" />
+    <Content Include="Content\Template\assets\images\shop\grid\samosachicken.jpg" />
+    <Content Include="Content\Template\assets\images\shop\grid\samosapotato.jpg" />
+    <Content Include="Content\Template\assets\images\shop\grid\springroll.jpg" />
+    <Content Include="Content\Template\assets\images\shop\grid\tea.jpg" />
+    <Content Include="Content\Template\assets\images\shop\related\1.jpg" />
+    <Content Include="Content\Template\assets\images\shop\related\2.jpg" />
+    <Content Include="Content\Template\assets\images\shop\related\3.jpg" />
+    <Content Include="Content\Template\assets\images\shop\thumb\1.jpg" />
+    <Content Include="Content\Template\assets\images\shop\thumb\2.jpg" />
+    <Content Include="Content\Template\assets\images\shop\thumb\3.jpg" />
+    <Content Include="Content\Template\assets\images\shop\thumb\4.jpg" />
+    <Content Include="Content\Template\assets\images\shop\thumb\6.jpg" />
+    <Content Include="Content\Template\assets\images\shop\thumb\7.jpg" />
+    <Content Include="Content\Template\assets\images\sliders\arrows\left-arrow-bg-dark.png" />
+    <Content Include="Content\Template\assets\images\sliders\arrows\left-arrow-bg.png" />
+    <Content Include="Content\Template\assets\images\sliders\arrows\left-arrow-wide.png" />
+    <Content Include="Content\Template\assets\images\sliders\arrows\right-arrow-bg-dark.png" />
+    <Content Include="Content\Template\assets\images\sliders\arrows\right-arrow-bg.png" />
+    <Content Include="Content\Template\assets\images\sliders\arrows\right-arrow-wide.png" />
+    <Content Include="Content\Template\assets\images\sliders\slide-bg\1.jpg" />
+    <Content Include="Content\Template\assets\images\sliders\slide-bg\10.jpg" />
+    <Content Include="Content\Template\assets\images\sliders\slide-bg\11.jpg" />
+    <Content Include="Content\Template\assets\images\sliders\slide-bg\12.jpg" />
+    <Content Include="Content\Template\assets\images\sliders\slide-bg\2.jpg" />
+    <Content Include="Content\Template\assets\images\sliders\slide-bg\3.jpg" />
+    <Content Include="Content\Template\assets\images\sliders\slide-bg\4.jpg" />
+    <Content Include="Content\Template\assets\images\sliders\slide-bg\5.jpg" />
+    <Content Include="Content\Template\assets\images\sliders\slide-bg\6.jpg" />
+    <Content Include="Content\Template\assets\images\sliders\slide-bg\7.jpg" />
+    <Content Include="Content\Template\assets\images\sliders\slide-bg\8.jpg" />
+    <Content Include="Content\Template\assets\images\sliders\slide-bg\9.jpg" />
+    <Content Include="Content\Template\assets\images\sliders\slide-bg\chef-hat.png" />
+    <Content Include="Content\Template\assets\images\sliders\slide-bg\fork-img.png" />
+    <Content Include="Content\Template\assets\images\sliders\slide-bg\knife-img.png" />
+    <Content Include="Content\Template\assets\images\sliders\slide-bg\left-arrow.png" />
+    <Content Include="Content\Template\assets\images\sliders\slide-bg\right-arrow.png" />
+    <Content Include="Content\Template\assets\images\sliders\thumb\1.jpg" />
+    <Content Include="Content\Template\assets\images\sliders\thumb\2.jpg" />
+    <Content Include="Content\Template\assets\images\sliders\thumb\3.jpg" />
+    <Content Include="Content\Template\assets\images\specials\popup\1.jpg" />
+    <Content Include="Content\Template\assets\images\specials\popup\2.jpg" />
+    <Content Include="Content\Template\assets\images\specials\popup\3.jpg" />
+    <Content Include="Content\Template\assets\images\specials\popup\4.jpg" />
+    <Content Include="Content\Template\assets\images\tabs\1.png" />
+    <Content Include="Content\Template\assets\images\tabs\2.png" />
+    <Content Include="Content\Template\assets\images\tabs\3.png" />
+    <Content Include="Content\Template\assets\images\tabs\4.png" />
+    <Content Include="Content\Template\assets\images\tabs\5.png" />
+    <Content Include="Content\Template\assets\images\tabs\6.png" />
+    <Content Include="Content\Template\assets\images\tabs\7.png" />
+    <Content Include="Content\Template\assets\images\tabs\logo-0.png" />
+    <Content Include="Content\Template\assets\images\team\1.jpg" />
+    <Content Include="Content\Template\assets\images\team\2.jpg" />
+    <Content Include="Content\Template\assets\images\team\3.jpg" />
+    <Content Include="Content\Template\assets\images\team\4.jpg" />
+    <Content Include="Content\Template\assets\images\team\5.jpg" />
+    <Content Include="Content\Template\assets\images\team\6.jpg" />
+    <Content Include="Content\Template\assets\images\team\7.jpg" />
+    <Content Include="Content\Template\assets\images\team\8.jpg" />
+    <Content Include="Content\Template\assets\images\team\thumb\1.jpg" />
+    <Content Include="Content\Template\assets\images\team\thumb\2.jpg" />
+    <Content Include="Content\Template\assets\images\team\thumb\3.jpg" />
+    <Content Include="Content\Template\assets\images\testimonial\1.png" />
+    <Content Include="Content\Template\assets\images\testimonial\2.png" />
+    <Content Include="Content\Template\assets\images\testimonial\3.png" />
+    <Content Include="Content\Template\assets\images\testimonial\4.png" />
+    <Content Include="Content\Template\assets\images\testimonial\chef-hat.png" />
+    <Content Include="Content\Template\assets\images\testimonial\icon.png" />
+    <Content Include="Content\Template\assets\images\testimonial\icon2.png" />
+    <Content Include="Content\Template\assets\images\testimonial\icon3.png" />
+    <Content Include="Content\Template\assets\images\testimonial\icon4.png" />
+    <Content Include="Content\Template\assets\js\functions.js" />
+    <Content Include="Content\Template\assets\js\html5shiv.js" />
+    <Content Include="Content\Template\assets\js\jquery-2.2.4.min.js" />
+    <Content Include="Content\Template\assets\js\jquery.validate.min.js" />
+    <Content Include="Content\Template\assets\js\less.js" />
+    <Content Include="Content\Template\assets\js\plugins.js" />
+    <Content Include="Content\Template\assets\js\plugins\bootstrap.js" />
+    <Content Include="Content\Template\assets\js\plugins\imagesloaded.min.js" />
+    <Content Include="Content\Template\assets\js\plugins\isotope.min.js" />
+    <Content Include="Content\Template\assets\js\plugins\jflickrfeed.js" />
+    <Content Include="Content\Template\assets\js\plugins\jquery.ajaxchimp.min.js" />
+    <Content Include="Content\Template\assets\js\plugins\jquery.counterup.js" />
+    <Content Include="Content\Template\assets\js\plugins\jquery.counterup.min.js" />
+    <Content Include="Content\Template\assets\js\plugins\jquery.easypiechart.js" />
+    <Content Include="Content\Template\assets\js\plugins\jquery.gmap.js" />
+    <Content Include="Content\Template\assets\js\plugins\jquery.gmap.min.js" />
+    <Content Include="Content\Template\assets\js\plugins\jquery.magnific-popup.js" />
+    <Content Include="Content\Template\assets\js\plugins\jquery.mb.YTPlayer.min.js" />
+    <Content Include="Content\Template\assets\js\plugins\jquery.waypoints.js" />
+    <Content Include="Content\Template\assets\js\plugins\moment.js" />
+    <Content Include="Content\Template\assets\js\plugins\owl.carousel.js" />
+    <Content Include="Content\Template\assets\js\plugins\twitterFetcher_min.js" />
+    <Content Include="Content\Template\assets\js\plugins\typed.js" />
+    <Content Include="Content\Template\assets\js\respond.min.js" />
+    <Content Include="Content\Template\assets\js\rsconfig.js" />
+    <Content Include="Content\Template\assets\less\base\intro.css" />
+    <Content Include="Content\Template\assets\less\style.css" />
+    <Content Include="Content\Template\assets\php\contact.php" />
+    <Content Include="Content\Template\assets\php\PHPMailer\class.phpmailer.php" />
+    <Content Include="Content\Template\assets\php\PHPMailer\class.phpmaileroauth.php" />
+    <Content Include="Content\Template\assets\php\PHPMailer\class.phpmaileroauthgoogle.php" />
+    <Content Include="Content\Template\assets\php\PHPMailer\class.pop3.php" />
+    <Content Include="Content\Template\assets\php\PHPMailer\class.smtp.php" />
+    <Content Include="Content\Template\assets\php\PHPMailer\get_oauth_token.php" />
+    <Content Include="Content\Template\assets\php\PHPMailer\PHPMailerAutoload.php" />
+    <Content Include="Content\Template\assets\php\reservation.php" />
+    <Content Include="Content\Template\assets\php\reservationpopup.php" />
+    <Content Include="Content\Template\assets\revolution\assets\coloredbg.png" />
+    <Content Include="Content\Template\assets\revolution\assets\gridtile.png" />
+    <Content Include="Content\Template\assets\revolution\assets\gridtile_3x3.png" />
+    <Content Include="Content\Template\assets\revolution\assets\gridtile_3x3_white.png" />
+    <Content Include="Content\Template\assets\revolution\assets\gridtile_white.png" />
+    <Content Include="Content\Template\assets\revolution\assets\loader.gif" />
+    <Content Include="Content\Template\assets\revolution\assets\sources\fb.png" />
+    <Content Include="Content\Template\assets\revolution\assets\sources\fr.png" />
+    <Content Include="Content\Template\assets\revolution\assets\sources\ig.png" />
+    <Content Include="Content\Template\assets\revolution\assets\sources\post.png" />
+    <Content Include="Content\Template\assets\revolution\assets\sources\revolution_slide1.png" />
+    <Content Include="Content\Template\assets\revolution\assets\sources\revolution_slide2.png" />
+    <Content Include="Content\Template\assets\revolution\assets\sources\tw.png" />
+    <Content Include="Content\Template\assets\revolution\assets\sources\vm.png" />
+    <Content Include="Content\Template\assets\revolution\assets\sources\wc.png" />
+    <Content Include="Content\Template\assets\revolution\assets\sources\yt.png" />
+    <Content Include="Content\Template\assets\revolution\assets\svg\index.php" />
+    <Content Include="Content\Template\assets\revolution\css\closedhand.cur" />
+    <Content Include="Content\Template\assets\revolution\css\index.php" />
+    <Content Include="Content\Template\assets\revolution\css\layers.css" />
+    <Content Include="Content\Template\assets\revolution\css\navigation-skins\ares.css" />
+    <Content Include="Content\Template\assets\revolution\css\navigation-skins\custom.css" />
+    <Content Include="Content\Template\assets\revolution\css\navigation-skins\dione.css" />
+    <Content Include="Content\Template\assets\revolution\css\navigation-skins\erinyen.css" />
+    <Content Include="Content\Template\assets\revolution\css\navigation-skins\gyges.css" />
+    <Content Include="Content\Template\assets\revolution\css\navigation-skins\hades.css" />
+    <Content Include="Content\Template\assets\revolution\css\navigation-skins\hebe.css" />
+    <Content Include="Content\Template\assets\revolution\css\navigation-skins\hephaistos.css" />
+    <Content Include="Content\Template\assets\revolution\css\navigation-skins\hermes.css" />
+    <Content Include="Content\Template\assets\revolution\css\navigation-skins\hesperiden.css" />
+    <Content Include="Content\Template\assets\revolution\css\navigation-skins\metis.css" />
+    <Content Include="Content\Template\assets\revolution\css\navigation-skins\persephone.css" />
+    <Content Include="Content\Template\assets\revolution\css\navigation-skins\uranus.css" />
+    <Content Include="Content\Template\assets\revolution\css\navigation-skins\zeus.css" />
+    <Content Include="Content\Template\assets\revolution\css\navigation.css" />
+    <Content Include="Content\Template\assets\revolution\css\openhand.cur" />
+    <Content Include="Content\Template\assets\revolution\css\settings-source.css" />
+    <Content Include="Content\Template\assets\revolution\css\settings.css" />
+    <Content Include="Content\Template\assets\revolution\css\tp-color-picker.css" />
+    <Content Include="Content\Template\assets\revolution\fonts\font-awesome\css\font-awesome.css" />
+    <Content Include="Content\Template\assets\revolution\fonts\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Content\Template\assets\revolution\fonts\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\Template\assets\revolution\fonts\font-awesome\index.php" />
+    <Content Include="Content\Template\assets\revolution\fonts\index.php" />
+    <Content Include="Content\Template\assets\revolution\fonts\pe-icon-7-stroke\css\helper.css" />
+    <Content Include="Content\Template\assets\revolution\fonts\pe-icon-7-stroke\css\index.php" />
+    <Content Include="Content\Template\assets\revolution\fonts\pe-icon-7-stroke\css\pe-icon-7-stroke.css" />
+    <Content Include="Content\Template\assets\revolution\fonts\pe-icon-7-stroke\fonts\index.php" />
+    <Content Include="Content\Template\assets\revolution\fonts\pe-icon-7-stroke\fonts\Pe-icon-7-stroke.svg" />
+    <Content Include="Content\Template\assets\revolution\fonts\pe-icon-7-stroke\index.php" />
+    <Content Include="Content\Template\assets\revolution\fonts\revicons\index.php" />
+    <Content Include="Content\Template\assets\revolution\fonts\revicons\revicons.svg" />
+    <Content Include="Content\Template\assets\revolution\images\tpcolorpicker\arrow_down.png" />
+    <Content Include="Content\Template\assets\revolution\images\tpcolorpicker\arrow_up.png" />
+    <Content Include="Content\Template\assets\revolution\images\tpcolorpicker\check.png" />
+    <Content Include="Content\Template\assets\revolution\images\tpcolorpicker\check_reverse.png" />
+    <Content Include="Content\Template\assets\revolution\images\tpcolorpicker\check_small.png" />
+    <Content Include="Content\Template\assets\revolution\images\tpcolorpicker\delete.png" />
+    <Content Include="Content\Template\assets\revolution\images\tpcolorpicker\exit.png" />
+    <Content Include="Content\Template\assets\revolution\images\tpcolorpicker\point_bottom.png" />
+    <Content Include="Content\Template\assets\revolution\images\tpcolorpicker\point_top.png" />
+    <Content Include="Content\Template\assets\revolution\images\tpcolorpicker\save.png" />
+    <Content Include="Content\Template\assets\revolution\images\tpcolorpicker\trans_tile.png" />
+    <Content Include="Content\Template\assets\revolution\index.php" />
+    <Content Include="Content\Template\assets\revolution\js\extensions\index.php" />
+    <Content Include="Content\Template\assets\revolution\js\extensions\revolution.extension.actions.min.js" />
+    <Content Include="Content\Template\assets\revolution\js\extensions\revolution.extension.carousel.min.js" />
+    <Content Include="Content\Template\assets\revolution\js\extensions\revolution.extension.kenburn.min.js" />
+    <Content Include="Content\Template\assets\revolution\js\extensions\revolution.extension.layeranimation.min.js" />
+    <Content Include="Content\Template\assets\revolution\js\extensions\revolution.extension.migration.min.js" />
+    <Content Include="Content\Template\assets\revolution\js\extensions\revolution.extension.navigation.min.js" />
+    <Content Include="Content\Template\assets\revolution\js\extensions\revolution.extension.parallax.min.js" />
+    <Content Include="Content\Template\assets\revolution\js\extensions\revolution.extension.slideanims.min.js" />
+    <Content Include="Content\Template\assets\revolution\js\extensions\revolution.extension.video.min.js" />
+    <Content Include="Content\Template\assets\revolution\js\extensions\source\index.php" />
+    <Content Include="Content\Template\assets\revolution\js\extensions\source\revolution.extension.actions.js" />
+    <Content Include="Content\Template\assets\revolution\js\extensions\source\revolution.extension.carousel.js" />
+    <Content Include="Content\Template\assets\revolution\js\extensions\source\revolution.extension.kenburn.js" />
+    <Content Include="Content\Template\assets\revolution\js\extensions\source\revolution.extension.layeranimation.js" />
+    <Content Include="Content\Template\assets\revolution\js\extensions\source\revolution.extension.migration.js" />
+    <Content Include="Content\Template\assets\revolution\js\extensions\source\revolution.extension.navigation.js" />
+    <Content Include="Content\Template\assets\revolution\js\extensions\source\revolution.extension.parallax.js" />
+    <Content Include="Content\Template\assets\revolution\js\extensions\source\revolution.extension.slideanims.js" />
+    <Content Include="Content\Template\assets\revolution\js\extensions\source\revolution.extension.video.js" />
+    <Content Include="Content\Template\assets\revolution\js\index.php" />
+    <Content Include="Content\Template\assets\revolution\js\jquery.themepunch.enablelog.js" />
+    <Content Include="Content\Template\assets\revolution\js\jquery.themepunch.revolution.min.js" />
+    <Content Include="Content\Template\assets\revolution\js\jquery.themepunch.tools.min.js" />
+    <Content Include="Content\Template\assets\revolution\js\source\index.php" />
+    <Content Include="Content\Template\assets\revolution\js\source\jquery.themepunch.enablelog.js" />
+    <Content Include="Content\Template\assets\revolution\js\source\jquery.themepunch.revolution.js" />
+    <Content Include="Content\Template\assets\revolution\js\source\jquery.themepunch.tools.min.js" />
+    <Content Include="Content\Template\assets\revolution\js\source\tp-color-picker.js" />
+    <Content Include="Content\Template\assets\revolution\js\tp-color-picker.min.js" />
+    <Content Include="Content\Template\assets\revolution\php\facebook\class-facebook.php" />
+    <Content Include="Content\Template\assets\revolution\php\flickr\class-flickr.php" />
+    <Content Include="Content\Template\assets\revolution\php\instagram\class-instagram.php" />
+    <Content Include="Content\Template\assets\revolution\php\twitter\class-twitter.php" />
+    <Content Include="Content\Template\assets\revolution\php\twitter\connection\Application.php" />
+    <Content Include="Content\Template\assets\revolution\php\twitter\connection\ConnectionAbstract.php" />
+    <Content Include="Content\Template\assets\revolution\php\twitter\connection\User.php" />
+    <Content Include="Content\Template\assets\revolution\php\twitter\RestApi.php" />
+    <Content Include="Content\Template\assets\revolution\php\vimeo\class-vimeo.php" />
+    <Content Include="Content\Template\assets\revolution\php\youtube\class-youtube.php" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\countdown\revolution.addon.countdown.min.js" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\filmstrip\css\revolution.addon.filmstrip.css" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\filmstrip\images\transparent.png" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\filmstrip\js\revolution.addon.filmstrip.min.js" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\particles\css\revolution.addon.particles.css" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\particles\js\revolution.addon.particles.min.js" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\polyfold\css\revolution.addon.polyfold.css" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\polyfold\js\revolution.addon.polyfold.min.js" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\slicey\js\revolution.addon.slicey.min.js" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\snow\revolution.addon.snow.js" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\snow\revolution.addon.snow.min.js" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\typewriter\css\index.php" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\typewriter\css\typewriter.css" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\typewriter\js\index.php" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\typewriter\js\revolution.addon.typewriter.js" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\typewriter\js\revolution.addon.typewriter.min.js" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\abacus.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\address-book.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\address-book2.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\aim.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\alarm.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\apple.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\arrow-left.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\arrow-right.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\arrows-updown.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\atm-cash.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\award1.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\award2.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\award3.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\award4.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\award5.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\badge01.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\badge02.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\bank.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\bank2.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\bell.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\binoculars.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\bomb.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\bonsai.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\book-apple.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\book.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\bookmark.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\box.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\brain.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\briefcase.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\browser01.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\browser02.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\buildings.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\buy-sign.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\calculator1.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\calculator2.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\calculator3.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\calendar1.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\calendar2.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\calendar3.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\calendar4.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\calendar5.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\certificate.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\champagne.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\character01.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\character02.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\character03.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\character04.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\character05.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\character06.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\character07.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\character08.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\chart-analysis.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\chart-board.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\chart-pyramid.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\chart01.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\chart02.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\chart03.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\chart04.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\chart05.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\chart06.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\chart07.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\chart08.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\chart09.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\chart10.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\chart11.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\chart12.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\chart13.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\chart14.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\chart15.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\chart16.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\chart17.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\chart18.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\chart19.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\chart20.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\chart21.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\chat.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\checklist.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\checklist2.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\checklist3.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\chemistry.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\chess-knight.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\chess-rook.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\chess.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\clock.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\closed-sign.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\cloud-coins.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\cloud-down.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\cloud-up.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\coffee.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\conference.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\contact-book.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\coupon.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\credit-card.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\crown.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\currencies.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\database.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\delivery.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\diagram-hierarchy.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\diamond.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\dollar.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\drawer.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\egg.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\emblem.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\envelope-money.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\envelopes.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\euro.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\exchange.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\exit.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\factory.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\fax.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\file01.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\file02.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\file03.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\file04.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\file05.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\file06.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\file07.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\file08.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\file09.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\file10.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\files.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\fire.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\fish.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\flag.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\folder-add.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\folder-delete.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\folder-online.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\folder-private.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\folder-remove.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\folder.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\folders.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\funnel-money.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\funnel.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\gauge.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\gauge2.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\gears1.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\gears2.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\glasses-moustache.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\globe-money.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\globe.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\globe2.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\graduation-hat.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\hand-globe.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\hand-key.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\hand-money.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\hand-money2.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\handshake.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\hat-moustache.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\hat.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\head-arrows.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\head-battery.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\head-check.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\head-compass.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\head-dollar.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\head-exclamation.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\head-flash.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\head-gauge.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\head-gears.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\head-hourglass.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\head-idea.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\head-question.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\head-structure.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\head.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\headquarters.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\hourglass.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\hours.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\incoming.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\ingots.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\key.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\key2.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\keyboard.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\label.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\lamp.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\laptop-article.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\laptop-cart.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\laptop-chart.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\laptop-chart2.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\laptop-diagram.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\laptop-envelope.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\laptop-finance.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\laptop-privacy.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\laptop-settings.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\laptop-user.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\laptop.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\lightbulb-green.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\lightbulb.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\lightning.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\like.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\lock.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\magnet-money.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\magnifying-glass.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\manager-globe.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\manager-idea.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\manager01.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\manager02.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\meditation.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\megaphone.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\money-growth.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\money-scales.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\money.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\money2.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\money3.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\money4.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\money5.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\money6.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\monitor.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\mouse.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\nest-money.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\newspaper-jobs.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\newspaper-pen.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\newspaper.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\NewTux.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\note-paper.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\office-chair.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\open-sign.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\outgoing.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\paper-clip.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\paper-plane.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\pen.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\pen2.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\pencil.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\pens-pencils.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\people-arrows06.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\people-gears.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\people-handshake.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\people-idea.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\people-meeting.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\people-meeting02.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\people-search01.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\people-search02.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\people-structure.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\people-structure01.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\people-structure02.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\people-structure03.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\people-structure04.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\people-structure05.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\people-structure06.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\people-structure07.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\percent.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\periscopemoney.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\person-arrows01.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\person-arrows012.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\person-arrows02.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\person-arrows022.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\person-arrows03.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\person-checkmark.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\person-cross.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\person-data.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\person-dollar.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\person-finance.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\person-flag.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\person-globe.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\person-idea02.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\person-info.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\person-puzzle.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\person-scales.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\person-time.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\person-umbrella.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\phone.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\pie-chart01.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\pie-chart02.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\piggy-bank.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\pin.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\plant-money.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\plant.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\pound.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\presentation.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\presentation02.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\preson-chart02.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\preson-chart03.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\preson-chart04.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\preson-laurels.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\preson-megaphone.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\preson-stairs.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\printer.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\profile.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\pulse.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\puzzle.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\quill.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\recycle.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\rocket.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\rocket2.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\ruble.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\ruler-compasses.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\safe.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\sale-sign.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\satellite-dish.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\scales.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\scissors.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\security.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\send.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\shield.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\shopping-cart.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\sign.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\smartphone-chart.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\smartphone-exclamation.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\smartphone-gears.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\smartphone-growth.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\smartphone-money.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\smartphone-user.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\smartphone.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\speaker.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\speaker02.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\speech-bubble.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\stamp.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\star.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\steering-wheel.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\strategy03.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\strategy1.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\strategy2.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\support-person.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\tablet-article.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\tablet-chart.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\tablet-chart2.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\tablet-chart3.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\tablet-pie-chart.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\tablet-pie-chart2.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\tablet.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\target.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\team.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\telescope.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\tie.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\tools.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\tools2.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\trash-bin.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\umbrella.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\user01.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\user02.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\user03.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\user04.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\user05.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\user06.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\user07.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\user08.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\user09.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\users.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\venn-diagram.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\wallet.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\wrench.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\yen.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\busy-icons-svg\yinyang.svg" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\css\index.php" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\css\license.txt" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\images\hand_point_right.png" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\images\index.php" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\images\write_right_angle.png" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\index.php" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\js\index.php" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\js\revolution.addon.whiteboard.min.js" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\js\source\revolution.addon.whiteboard.js" />
+    <Content Include="Content\Template\changepassword.html" />
+    <Content Include="Content\Template\dynamic part index.txt" />
+    <Content Include="Content\Template\elements-contact-form.html" />
+    <Content Include="Content\Template\home.html" />
+    <Content Include="Content\Template\index.html" />
+    <Content Include="Content\Template\login - Copy.html" />
+    <Content Include="Content\Template\login.html" />
+    <Content Include="Content\Template\menu.html" />
+    <Content Include="Content\Template\profile.html" />
+    <Content Include="Content\Template\profilepic.jpg" />
+    <Content Include="Content\Template\profilepic.png" />
+    <Content Include="Content\Template\shop-cart.html" />
+    <Content Include="Content\Template\task.txt" />
+    <Content Include="Content\Template\visa.jpg" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\DashBoard\assets\css\demo.css.map" />
+    <Content Include="Content\DashBoard\assets\css\main.css.map" />
+    <Content Include="Content\DashBoard\assets\vendor\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\DashBoard\assets\vendor\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\DashBoard\assets\vendor\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\DashBoard\assets\vendor\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\DashBoard\assets\vendor\chartist\css\chartist-custom.css.map" />
+    <Content Include="Content\DashBoard\assets\vendor\chartist\map\chartist.css.map" />
+    <Content Include="Content\DashBoard\assets\vendor\chartist\map\chartist.min.js.map" />
+    <Content Include="Content\DashBoard\assets\vendor\chartist\scss\chartist.scss" />
+    <Content Include="Content\DashBoard\assets\vendor\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\DashBoard\assets\vendor\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\DashBoard\assets\vendor\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\DashBoard\assets\vendor\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\DashBoard\assets\vendor\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="Content\DashBoard\assets\vendor\jquery\jquery.min.map" />
+    <Content Include="Content\DashBoard\assets\vendor\linearicons\fonts\Linearicons-Free.eot" />
+    <Content Include="Content\DashBoard\assets\vendor\linearicons\fonts\Linearicons-Free.ttf" />
+    <Content Include="Content\DashBoard\assets\vendor\linearicons\fonts\Linearicons-Free.woff" />
+    <Content Include="Content\DashBoard\assets\vendor\linearicons\fonts\Linearicons-Free.woff2" />
+    <Content Include="Content\Template\assets\css\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\Template\assets\css\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\Template\assets\css\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\Template\assets\css\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\Template\assets\css\fonts\FontAwesome.otf" />
+    <Content Include="Content\Template\assets\css\fonts\Linearicons-Free.eot" />
+    <Content Include="Content\Template\assets\css\fonts\Linearicons-Free.ttf" />
+    <Content Include="Content\Template\assets\css\fonts\Linearicons-Free.woff" />
+    <Content Include="Content\Template\assets\css\fonts\Linearicons-Free.woff2" />
+    <Content Include="Content\Template\assets\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\Template\assets\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\Template\assets\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\Template\assets\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\Template\assets\fonts\FontAwesome.otf" />
+    <Content Include="Content\Template\assets\less\.crunch" />
+    <Content Include="Content\Template\assets\less\base\base.less" />
+    <Content Include="Content\Template\assets\less\base\intro.less" />
+    <Content Include="Content\Template\assets\less\base\mixins.less" />
+    <Content Include="Content\Template\assets\less\base\reset.less" />
+    <Content Include="Content\Template\assets\less\base\vars.less" />
+    <Content Include="Content\Template\assets\less\layout\accordion.less" />
+    <Content Include="Content\Template\assets\less\layout\alert.less" />
+    <Content Include="Content\Template\assets\less\layout\align.less" />
+    <Content Include="Content\Template\assets\less\layout\animation.less" />
+    <Content Include="Content\Template\assets\less\layout\background.less" />
+    <Content Include="Content\Template\assets\less\layout\backtop.less" />
+    <Content Include="Content\Template\assets\less\layout\blockquotes.less" />
+    <Content Include="Content\Template\assets\less\layout\breadcrumb.less" />
+    <Content Include="Content\Template\assets\less\layout\buttons.less" />
+    <Content Include="Content\Template\assets\less\layout\color.less" />
+    <Content Include="Content\Template\assets\less\layout\cta.less" />
+    <Content Include="Content\Template\assets\less\layout\forms.less" />
+    <Content Include="Content\Template\assets\less\layout\grid.less" />
+    <Content Include="Content\Template\assets\less\layout\heading.less" />
+    <Content Include="Content\Template\assets\less\layout\icon-box.less" />
+    <Content Include="Content\Template\assets\less\layout\icons.less" />
+    <Content Include="Content\Template\assets\less\layout\lists.less" />
+    <Content Include="Content\Template\assets\less\layout\media.less" />
+    <Content Include="Content\Template\assets\less\layout\misc.less" />
+    <Content Include="Content\Template\assets\less\layout\modals.less" />
+    <Content Include="Content\Template\assets\less\layout\pagination.less" />
+    <Content Include="Content\Template\assets\less\layout\range.less" />
+    <Content Include="Content\Template\assets\less\layout\tables.less" />
+    <Content Include="Content\Template\assets\less\layout\tabs.less" />
+    <Content Include="Content\Template\assets\less\layout\typography.less" />
+    <Content Include="Content\Template\assets\less\module\404.less" />
+    <Content Include="Content\Template\assets\less\module\action.less" />
+    <Content Include="Content\Template\assets\less\module\banners.less" />
+    <Content Include="Content\Template\assets\less\module\blog.less" />
+    <Content Include="Content\Template\assets\less\module\carousel.less" />
+    <Content Include="Content\Template\assets\less\module\clients.less" />
+    <Content Include="Content\Template\assets\less\module\contact.less" />
+    <Content Include="Content\Template\assets\less\module\counters.less" />
+    <Content Include="Content\Template\assets\less\module\dishes.less" />
+    <Content Include="Content\Template\assets\less\module\divider.less" />
+    <Content Include="Content\Template\assets\less\module\feature.less" />
+    <Content Include="Content\Template\assets\less\module\footer.less" />
+    <Content Include="Content\Template\assets\less\module\hamburger.less" />
+    <Content Include="Content\Template\assets\less\module\header.less" />
+    <Content Include="Content\Template\assets\less\module\heading.less" />
+    <Content Include="Content\Template\assets\less\module\hero.less" />
+    <Content Include="Content\Template\assets\less\module\landing.less" />
+    <Content Include="Content\Template\assets\less\module\loading.less" />
+    <Content Include="Content\Template\assets\less\module\maintenance.less" />
+    <Content Include="Content\Template\assets\less\module\menu-max1200.less" />
+    <Content Include="Content\Template\assets\less\module\menu-max479.less" />
+    <Content Include="Content\Template\assets\less\module\menu-max767.less" />
+    <Content Include="Content\Template\assets\less\module\menu-max991.less" />
+    <Content Include="Content\Template\assets\less\module\menu-min992.less" />
+    <Content Include="Content\Template\assets\less\module\menu.less" />
+    <Content Include="Content\Template\assets\less\module\module.less" />
+    <Content Include="Content\Template\assets\less\module\numbers.less" />
+    <Content Include="Content\Template\assets\less\module\page-title.less" />
+    <Content Include="Content\Template\assets\less\module\portfolio.less" />
+    <Content Include="Content\Template\assets\less\module\pricing.less" />
+    <Content Include="Content\Template\assets\less\module\shop.less" />
+    <Content Include="Content\Template\assets\less\module\side-nav.less" />
+    <Content Include="Content\Template\assets\less\module\sidebar.less" />
+    <Content Include="Content\Template\assets\less\module\skills.less" />
+    <Content Include="Content\Template\assets\less\module\soon.less" />
+    <Content Include="Content\Template\assets\less\module\team.less" />
+    <Content Include="Content\Template\assets\less\module\testimonial.less" />
+    <Content Include="Content\Template\assets\less\module\video.less" />
+    <Content Include="Content\Template\assets\less\state\custom.less" />
+    <Content Include="Content\Template\assets\less\state\layout-bordered.less" />
+    <Content Include="Content\Template\assets\less\state\layout-boxed.less" />
+    <Content Include="Content\Template\assets\less\state\layout-dark.less" />
+    <Content Include="Content\Template\assets\less\state\layout-rtl.less" />
+    <Content Include="Content\Template\assets\less\state\layout-split.less" />
+    <Content Include="Content\Template\assets\less\state\responsive.less" />
+    <Content Include="Content\Template\assets\less\style.less" />
+    <Content Include="Content\Template\assets\less\theme\theme-default.less" />
+    <Content Include="Content\Template\assets\revolution\.DS_Store" />
+    <Content Include="Content\Template\assets\revolution\assets\.DS_Store" />
+    <Content Include="Content\Template\assets\revolution\assets\svg\svg.zip" />
+    <Content Include="Content\Template\assets\revolution\css\.DS_Store" />
+    <Content Include="Content\Template\assets\revolution\fonts\.DS_Store" />
+    <Content Include="Content\Template\assets\revolution\fonts\font-awesome\.DS_Store" />
+    <Content Include="Content\Template\assets\revolution\fonts\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\Template\assets\revolution\fonts\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\Template\assets\revolution\fonts\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\Template\assets\revolution\fonts\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\Template\assets\revolution\fonts\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="Content\Template\assets\revolution\fonts\pe-icon-7-stroke\.DS_Store" />
+    <Content Include="Content\Template\assets\revolution\fonts\pe-icon-7-stroke\fonts\Pe-icon-7-stroke.eot" />
+    <Content Include="Content\Template\assets\revolution\fonts\pe-icon-7-stroke\fonts\Pe-icon-7-stroke.ttf" />
+    <Content Include="Content\Template\assets\revolution\fonts\pe-icon-7-stroke\fonts\Pe-icon-7-stroke.woff" />
+    <Content Include="Content\Template\assets\revolution\fonts\revicons\revicons.eot" />
+    <Content Include="Content\Template\assets\revolution\fonts\revicons\revicons.ttf" />
+    <Content Include="Content\Template\assets\revolution\fonts\revicons\revicons.woff" />
+    <Content Include="Content\Template\assets\revolution\info.cfg" />
+    <Content Include="Content\Template\assets\revolution\js\.DS_Store" />
+    <Content Include="Content\Template\assets\revolution\js\extensions\.DS_Store" />
+    <Content Include="Content\Template\assets\revolution\php\.DS_Store" />
+    <Content Include="Content\Template\assets\revolution\php\twitter\.DS_Store" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\.DS_Store" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\countdown\.DS_Store" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\snow\.DS_Store" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\typewriter\.DS_Store" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\.DS_Store" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\assets\.DS_Store" />
+    <Content Include="Content\Template\assets\revolution\revolution-addons\whiteboard\js\.DS_Store" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Admin\Signin.cshtml" />
+    <Content Include="Views\Shared\DashboardLayout.cshtml" />
+    <Content Include="Views\Admin\AddProduct.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Admin\Dashboard.cshtml" />
+    <Content Include="Views\Shared\_mycustomlayout.cshtml" />
+    <Content Include="Views\Home\Menu.cshtml" />
+    <Content Include="Views\Home\View.cshtml" />
+    <Content Include="Views\Home\View1.cshtml" />
+    <Content Include="Views\Home\CustomerOrder.cshtml" />
+    <Content Include="Views\Home\CustomerTotalAmount.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Admin\ViewProduct.cshtml" />
+    <Content Include="Views\Admin\ViewFeedback.cshtml" />
+    <Content Include="Views\Home\SignUp.cshtml" />
+    <Content Include="Views\Home\MyProfile.cshtml" />
+    <Content Include="Views\Home\Feedback.cshtml" />
+    <Content Include="Views\Admin\Deposit.cshtml" />
+    <Content Include="Views\Home\Cart.cshtml" />
+    <Content Include="Views\Home\CHeckView.cshtml" />
+    <Content Include="Views\Home\ChangePassword.cshtml" />
+    <Content Include="Views\Home\Imagetest.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Content\Template\assets\icons\" />
+    <Folder Include="ProductImage\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>49647</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:49647/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

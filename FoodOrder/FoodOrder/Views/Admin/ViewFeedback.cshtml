@@ -1,0 +1,45 @@
+﻿@model IEnumerable<FoodOrder.Models.FeedBack>
+
+@{
+    ViewBag.Title = "ViewFeedback";
+    Layout = "~/Views/Shared/DashboardLayout.cshtml";
+}
+
+<h2>ViewFeedback</h2>
+
+<table class="table">
+    <tr>
+        @*<th>
+            @Html.DisplayNameFor(model => model.CUSTID)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.FBDATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RATING)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FBDESCRIPTION)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.CUSTID)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.FBDATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RATING)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FBDESCRIPTION)
+        </td>
+    
+    </tr>
+}
+
+</table>

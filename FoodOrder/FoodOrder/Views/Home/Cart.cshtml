@@ -1,0 +1,147 @@
+﻿@model IEnumerable<FoodOrder.Models.Cart>
+
+@{
+    ViewBag.Title = "Cart";
+    Layout = "~/Views/Shared/_mycustomlayout.cshtml";
+    int amount = 0;
+
+}
+
+
+
+
+
+
+
+
+
+<section id="shopcart" class="shop shop-cart bg-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="cart-table table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr class="cart-product">
+                                <th class="cart-product-item">Product</th>
+                                <th class="cart-product-price">Price</th>
+                                <th class="cart-product-quantity">Quantity</th>
+                                <th class="cart-product-total">Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+
+                                <tr class="cart-product">
+                                    <td class="cart-product-item">
+                                        <div class="cart-product-remove">
+                                            <i class="fa fa-close"></i>
+                                        </div>
+                                        <div class="cart-product-img">
+                                            <img src="assets/images/shop/thumb/1.jpg" alt="product" />
+                                        </div>
+                                        <div class="cart-product-name">
+                                            <h6>@item.ITEMNAME</h6>
+                                        </div>
+                                    </td>
+                                    <td class="cart-product-price">@item.PRICE</td>
+                                    <td class="cart-product-quantity">
+                                        <div class="product-quantity">
+                                            @*<a href=""><i class="fa fa-minus" onclick="itemsubtract(@item.QUANTITY)"></i></a>*@
+                                            <input type="number" value=@item.QUANTITY min="1" id="pro1-qunt">
+                                            @*<a href=""><i class="fa fa-plus"></i></a>*@
+                                        </div>
+                                    </td>
+                                    <td class="cart-product-total">@item.subtotal</td>
+                                </tr>
+                                amount += item.subtotal;
+                            }
+                            <tr class="cart-product-action">
+                                <td colspan="4">
+                                    <div class="row clearfix">
+                                        <div class="col-xs-12 col-sm-6 col-md-6">
+                                            @*<form class="form-inline">
+                                                    <input type="text" class="form-control" id="coupon" placeholder="Coupon Code" />
+                                                    <button type="submit" class="btn btn--primary btn--rounded">Apply Coupon</button>
+                                                </form>*@
+                                        </div><!-- .col-md-6 end -->
+                                        <div class="col-xs-12 col-sm-6 col-md-6 text-right">
+                                            <a class="btn btn--secondary btn--rounded" href="#">update cart</a>
+                                            <a class="btn btn--primary btn--rounded" href="#">Checkout</a>
+
+                                            <button class="btn btn--primary btn--rounded" onclick="selectpayment();" href="#">sweet alert</button>
+                                        </div><!-- .col-md-6 end -->
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- .cart-table end -->
+            </div>
+            <!-- .col-md-12 end -->
+
+            <div class="col-xs-12 col-sm-12  col-md-12">
+                <div class="cart-total-amount">
+                    <h6>Totals :</h6>
+                    <ul class="list-unstyled">
+                        <li>Cart Subtotal :<span class="pull-right text-right">@amount</span></li>
+                        <!--
+                        <li>Shipping :<span class="pull-right text-right">Free Shipping</span></li> -->
+                        <li>Order Total :<span class="pull-right text-right">@amount</span></li>
+                    </ul>
+                </div><!-- .cart-total-amount end -->
+            </div><!-- .col-md-6 end -->
+        </div><!-- .row end -->
+    </div><!-- .container end -->
+</section>
+
+
+
+@section scripts{
+    
+    <script type="text/javascript">
+        var paymentmethod;
+      
+        
+        function selectpayment() {
+
+            swal({
+                title: 'Select Payment method',
+                input: 'select',
+                inputOptions: {
+                    'Wallet': 'Wallet',
+                    'MasterCard': 'MasterCard',
+                },
+                inputPlaceholder: 'Select payment method',
+                showCancelButton: true,
+                inputValidator: (value) => {
+
+                }
+            }).then((result) => {
+
+
+                //swal(value);
+                alert(result.value);
+                paymentmethod = result.value;
+                $.get("/Home/check?paymentmethod=" + encodeURI(paymentmethod) , function (data) {
+                        swal.close();
+                        if (data == "@(FoodOrder.Shared.Constants.MSG_SUCCESS.Text)") {
+                            swal.close();
+                            swal('Your order has been placed');
+                        }
+                        else {
+                            swal('ERROR ORDERING');
+                        }
+                          })
+            })
+
+
+        }
+
+      
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2"></script>
+}

@@ -1,0 +1,64 @@
+﻿
+<form id="frmDeposit" action="#" class="job-sign-from">
+    <input type="submit" style="display:none" />
+    <div class="form-group" style="padding-top:20px;"><input id="WALLETID" name="WALLETID" type="text" placeholder="Wallet number" class="form-control" required /></div>
+    <div class="form-group" style="padding-top:20px;"><input id="AMOUNT" name="AMOUNT" type="number" placeholder="AMOUNT" class="form-control" required /></div>
+    @*<div class="form-group">
+            <div class="flex-group">
+                <div class="left"><label class="checkbox-inline"><input type="checkbox" class="" />Keep me logged in</label></div>
+                <div class="right">  <a href="#" class="sign-from-link">Forgot password?</a> </div>
+            </div>
+        </div>*@
+    <div id="ErrMsgDiv" class="form-group" style="padding-top:20px;text-align:left;display:none;">
+        <span id="ErrMsg" style="color: red;font-weight: 600;"></span>
+    </div>
+    <div class="form-group" style="padding-top:20px;">
+        <button style="height:45px;" class="btn btn-custom btn-custom-secondary" type="button" onclick="Deposit();">Deposit</button>
+    </div>
+</form>
+
+
+@section scripts{
+    <script type="text/javascript">
+        function Deposit() {
+         if ($('#frmDeposit')[0].checkValidity()) {
+            swal('Please wait');
+            swal.showLoading();
+            var walletid = $("#WALLETID").val();
+            var amount = $("#AMOUNT").val();
+            var obj = {};
+            obj.id = walletid;
+             obj.amount = amount;
+             
+               $.post("/Admin/DepositAmount", obj, function (data) {
+            swal.close();
+                   if (data == "@(FoodOrder.Shared.Constants.MSG_SUCCESS.Text)") {
+                       //swal('Amount Deposited', '').then((result) => {
+                       //    if (result.value) {
+                       //        //swal("Verify your account");
+                       //        //swal.showLoading();
+                       //        location.href = "/Admin/Index";
+                       //    }
+                       //}) 
+                       swal('Amount Deposited');
+                location.href = "/Admin/Index";
+                
+            }
+            else {
+                swal(data);
+            }
+
+        })
+         //alert(obj.WALLETID+obj.AMOUNT);
+        }
+        else {
+            $('#frmDeposit').find(':submit').click();
+        }
+            
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2"></script>
+    <script src="~/Content/Template/assets/js/jquery-2.2.4.min.js"></script>
+    <script src="~/Content/Template/assets/js/plugins.js"></script>
+    <script src="~/Content/Template/assets/js/functions.js"></script>
+}

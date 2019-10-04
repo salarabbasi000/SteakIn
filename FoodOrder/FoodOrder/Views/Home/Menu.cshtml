@@ -1,0 +1,116 @@
+﻿@model List<FoodOrder.Models.fooditem>
+
+@{
+    ViewBag.Title = "Menu";
+    Layout = "~/Views/Shared/_mycustomlayout.cshtml";
+
+
+    List<FoodOrder.Shared.Constants.DDList> lstItemCategory = FoodOrder.Shared.Constants.getItemCategory();
+    int Quantity=0;
+
+}
+
+
+
+<section id="shop" class="shop shop-4 bg-white">
+    <div class="container">
+        <div class="row">
+            <!-- Projects Filter
+            ============================================= -->
+            <div class="col-xs-12 col-sm-12  col-md-12 shop-filter">
+
+                <ul id="ITEMCATEGORY" name="ITEMCATEGORY" type="text" placeholder="ITEMCATEGORY">
+                    @foreach (var opt in lstItemCategory)
+                    {
+                        string selected = "";
+                        if (opt.isSelected)
+                        {
+                            selected = "selected";
+                        }
+                        <li value="@opt.Value" @selected>@opt.Text</li>
+                    }
+                </ul>
+
+            </div>
+            <!-- .projects-filter end -->
+        </div>
+        <!-- .row end -->
+        <div id="shop-all" class="row">
+            <!-- Product #1 -->
+
+            @foreach (var item in Model)
+            {<div class="col-sm-3">
+    <div class="product-item" style="border:double">
+        <div class="product--img">
+            <img src="@Url.Content("~/Content/Template/")assets/images/shop/grid/tea.jpg" alt="Product" />
+
+            <div class="product--action">
+                <input type="number" class="form-control" placeholder="1" name="quantity" id="@(item.ITEMID)quantity"  min=1 required>
+            </div>
+            <!-- .product-overlay end -->
+        </div>
+        <!-- .product-img end -->
+        <div class="product--content">
+            <div class="product--title">
+                <h3><a href="#">@item.ITEMNAME</a></h3>
+            </div>
+            <!-- .product-title end -->
+            <div class="product--price">
+                <span>Rs: @item.PRICE</span>
+            </div>
+            <div>
+                <span>Status: @item.ITEMSTATUS</span>
+            </div>
+            <!-- .product-price end -->
+            @*<@*div class="product--price">
+            <span class="@ItemStatusClassName"> @ItemStatusDesc </span>
+        </div>"*@
+            <div class="product--action btn--block">
+                
+                <button class="btn btn--secondary btn--rounded"  href="#" onclick="AddtoCart('@item.ITEMID')">Add To Cart</button>
+            </div>
+
+
+        </div>
+        <!-- .product-bio end -->
+    </div>
+         
+               
+         
+</div>
+            }
+
+            @*<!-- .productFilter end -->
+
+
+                <!-- .productFilter end -->*@
+
+        </div>
+
+    </div>
+    <!-- .container end -->
+</section>
+
+
+<script type="text/javascript">
+
+    function AddtoCart(id) {
+        
+        var quantity = $("#" + id + "quantity").val();
+        //alert(quantity);
+        var obj = {};
+        obj.id = id;
+        obj.quantity = quantity;
+    
+        $.post("/Home/SetCart", obj, function (data) {
+            swal.close();
+            if (data == "@(FoodOrder.Shared.Constants.MSG_SUCCESS.Text)") {
+                location.href = "/Home/Menu";
+            }
+
+        })
+    }
+
+  </script>
+
+

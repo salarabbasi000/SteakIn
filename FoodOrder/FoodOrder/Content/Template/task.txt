@@ -1,0 +1,29 @@
+mastercard registration page
+on clicking checkout --->> popup asking to select payment method 
+for selecting mastercard as payment method, ask for pin verification
+page for deposting amount on wallet 
+on profile hyperlink for change pw, and hypelink for adding mastercard
+on feedback page: rating method (Star)
+
+login controller
+addtocart
+removefromcart
+
+feedback
+checkout
+addproduct
+changepassword controller
+verfication mail
+
+
+
+sign up
+
+email
+password
+confirm password
+link for sign in
+
+
+
+

@@ -1,0 +1,97 @@
+﻿@model FoodOrder.Models.Customer
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_mycustomlayout.cshtml";
+}
+@*<link href="~/Content/css_22_log_in.min.css" rel="stylesheet">*@
+<main class="">
+    <div class="container">
+        <div class="sign-form">
+            <div class="header">
+                <h1 class="title">Sign In</h1>
+            </div>
+            <form id="frmLogin" action="#" class="job-sign-from">
+                <input type="submit" style="display:none" />
+                <div class="form-group" style="padding-top:20px;"><input id="EMAIL" name="EMAIL" type="email" placeholder="Email" class="form-control" required /></div>
+                <div class="form-group" style="padding-top:20px;"><input id="PASSWORD" name="PASSWORD" type="password" placeholder="Password" class="form-control" required /></div>
+                @*<div class="form-group">
+                        <div class="flex-group">
+                            <div class="left"><label class="checkbox-inline"><input type="checkbox" class="" />Keep me logged in</label></div>
+                            <div class="right">  <a href="#" class="sign-from-link">Forgot password?</a> </div>
+                        </div>
+                    </div>*@
+                <div id="ErrMsgDiv" class="form-group" style="padding-top:20px;text-align:left;display:none;">
+                    <span id="ErrMsg" style="color: red;font-weight: 600;"></span>
+                </div>
+                <div class="form-group" style="padding-top:20px;">
+                    <button style="height:45px;" class="btn btn-custom btn-custom-secondary" type="button" onclick="LogIn();">Sign In</button>
+                </div>
+            </form>
+            <div class="footer"> <span>Don't have a account?</span><br /> <a onclick="location.href='@Url.Action("SignUP","Home")'" class="sign-from-link" style="cursor: pointer;" >Sign Up</a> </div>
+        </div>
+    </div>
+</main>
+
+
+@section scripts{
+    <script type="text/javascript">
+    $(document).keypress(function (e) {
+        if (e.which == 13) {
+            e.preventDefault();
+            if ($("#EMAIL").val()) {
+                if ($("#PASSWORD").val()) {
+                    LogIn();
+                }
+                else {
+                    $("#PASSWORD").focus();
+                }
+            }
+            else {
+                $("#EMAIL").focus();
+            }
+        }
+    })
+
+    $("input").keypress(function (e) {
+        $("#ErrMsg").text('');
+        $("#ErrMsgDiv").hide();
+    })
+
+    function LogIn() {
+
+        if ($('#frmLogin')[0].checkValidity()) {
+            swal('Please wait');
+            swal.showLoading();
+            var frmSerialize = $("#frmLogin").serialize();
+            $.post("/Home/Login", frmSerialize, function (data) {
+                swal.close();
+                if (data == "@(FoodOrder.Shared.Constants.MSG_SUCCESS.Text)") {
+                    location.href = "/Home/Menu";
+                }
+                else if (data == "@(FoodOrder.Shared.Constants.MSG_ERR_INVALIDCRED.Text)") {
+                    //var msg = "Incorrect Username or Password!"
+                    var msg = "@(FoodOrder.Shared.Constants.MSG_ERR_INVALIDCRED.Value)"
+                    $("#ErrMsg").text(msg);
+                    $("#ErrMsgDiv").show();
+                    $("#EMAIL").focus();
+                }
+                else if (data == "@(FoodOrder.Shared.Constants.MSG_ERR_NOUSEREXIST.Text)") {
+                    //var msg = "No user exists against the provided Email!"
+                    var msg = "@(FoodOrder.Shared.Constants.MSG_ERR_NOUSEREXIST.Value)"
+                    $("#ErrMsg").text(msg);
+                    $("#ErrMsgDiv").show();
+                    $("#EMAIL").focus();
+
+                }
+            })
+        }
+        else {
+            $('#frmLogin').find(':submit').click();
+        }
+    }
+    </script>
+    <script src="~/Content/Template/assets/js/jquery-2.2.4.min.js"></script>
+    <script src="~/Content/Template/assets/js/plugins.js"></script>
+    <script src="~/Content/Template/assets/js/functions.js"></script>
+}
